@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { loadCatalog, getAllItems, type Catalog } from '@/lib/catalog';
+import ItemGrid from '@/components/ItemGrid';
 
 export default function Home() {
   const [catalog, setCatalog] = useState<Catalog | null>(null);
@@ -64,23 +65,7 @@ export default function Home() {
   }
 
   const items = getAllItems(catalog);
-  const functionCount = items.filter(i => i.type === 'functions').length;
-  const moduleCount = items.filter(i => i.type === 'modules').length;
-  const stepCount = items.filter(i => i.type === 'steps').length;
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Catalog Status</h2>
-        <p className="text-gray-700">
-          Catalog loaded successfully: <strong>{functionCount}</strong> functions,{' '}
-          <strong>{moduleCount}</strong> modules, <strong>{stepCount}</strong> steps
-        </p>
-        <p className="text-sm text-gray-500 mt-2">
-          Check the browser console for detailed catalog data.
-        </p>
-      </div>
-    </div>
-  );
+  return <ItemGrid items={items} />;
 }
 
