@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="./" data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Count Events Demo</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/custom.css?v=a569c0df" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="../../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'count_events_example';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="" spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="index.html">
+<p class="title logo__title"></p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</button></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="../src/count_events.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Count Events Demo</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Count Events Demo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project">Create a project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-datastore-profiles-for-model-monitoring">Generate datastore profiles for model monitoring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-model-monitoring-infrastructure">Deploy model monitoring infrastructure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-models">Log Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-serving-function">Deploy Serving Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-serving">Invoke Serving</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-app">Evaluate App</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-application-from-hub">Set Application from Hub</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section id="count-events-demo">
+<h1>Count Events Demo<a class="headerlink" href="#count-events-demo" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This notebook walks through a simple example of how to monitor a real-time serving function and how to add your a custom monitoring application from the hub.
+For simplicity, we’ll use the Count Events application, which calculates the number of requests in each time window.
+If you’d like to create your own model monitoring application (which can later be added to the hub), follow these instructions:https://docs.mlrun.org/en/stable/model-monitoring/applications.html</p>
+<p>To add a model monitoring application to your project from the hub, you can choose one of two approaches:</p>
+<ol class="arabic simple">
+<li><p><strong>Set it directly</strong> – the application will be deployed as is.</p></li>
+<li><p><strong>Import it as a module</strong> – this lets you test and modify the application code before deploying it.</p></li>
+</ol>
+</section>
+<section id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Link to this heading">#</a></h2>
+<section id="create-a-project">
+<h3>Create a project<a class="headerlink" href="#create-a-project" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mlrun</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">get_or_create_project</span><span class="p">(</span><span class="s2">"count-events-demo"</span><span class="p">,</span><span class="s1">'./'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-11-05 15:33:39,611 [warning] Failed resolving version info. Ignoring and using defaults
+&gt; 2025-11-05 15:33:43,049 [warning] Server or client version is unstable. Assuming compatible: {"client_version":"0.0.0+unstable","server_version":"1.11.0"}
+&gt; 2025-11-05 15:33:58,614 [info] Created and saved project: {"context":"./","from_template":null,"name":"count-events-demo","overwrite":false,"save":true}
+&gt; 2025-11-05 15:33:58,616 [info] Project created successfully: {"project_name":"count-events-demo","stored_in_db":true}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="generate-datastore-profiles-for-model-monitoring">
+<h3>Generate datastore profiles for model monitoring<a class="headerlink" href="#generate-datastore-profiles-for-model-monitoring" title="Link to this heading">#</a></h3>
+<p>Before you enable model monitoring, you must configure datastore profiles for TSDB and streaming endpoints. A datastore profile holds all the information required to address an external data source, including credentials.
+Model monitoring supports Kafka and V3IO as streaming platforms, and TDEngine and V3IO as TSDB platforms.</p>
+<p>In this example we will use V3IO for both streaming and TSDB platforms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.datastore.datastore_profile</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DatastoreProfileV3io</span>
+<span class="p">)</span>
+
+<span class="n">v3io_profile</span> <span class="o">=</span> <span class="n">DatastoreProfileV3io</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"v3io_profile"</span><span class="p">,</span> <span class="n">v3io_access_key</span><span class="o">=</span><span class="n">mlrun</span><span class="o">.</span><span class="n">mlconf</span><span class="o">.</span><span class="n">get_v3io_access_key</span><span class="p">())</span>
+
+<span class="n">project</span><span class="o">.</span><span class="n">register_datastore_profile</span><span class="p">(</span><span class="n">v3io_profile</span><span class="p">)</span>
+<span class="n">project</span><span class="o">.</span><span class="n">set_model_monitoring_credentials</span><span class="p">(</span><span class="n">stream_profile_name</span><span class="o">=</span><span class="n">v3io_profile</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tsdb_profile_name</span><span class="o">=</span><span class="n">v3io_profile</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="deploy-model-monitoring-infrastructure">
+<h3>Deploy model monitoring infrastructure<a class="headerlink" href="#deploy-model-monitoring-infrastructure" title="Link to this heading">#</a></h3>
+<p>Once you’ve provided the model monitoring credentials, you can enable monitoring capabilities for your project.
+Visit MLRun’s <a class="reference external" href="https://docs.mlrun.org/en/stable/model-monitoring/index.html#model-monitoring-des">Model Monitoring Architecture</a> to read more.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project</span><span class="o">.</span><span class="n">enable_model_monitoring</span><span class="p">(</span><span class="n">base_period</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+                                <span class="n">deploy_histogram_data_drift_app</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="c1"># built-in monitoring application for structured data </span>
+                                <span class="n">wait_for_deployment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-11-05 15:41:01  (info) Deploying function
+2025-11-05 15:41:01  (info) Building
+2025-11-05 15:41:01  (info) Staging files and preparing base images
+2025-11-05 15:41:01  (warn) Using user provided base image, runtime interpreter version is provided by the base image
+2025-11-05 15:41:02  (info) Building processor image
+2025-11-05 15:42:57  (info) Build complete
+2025-11-05 15:43:07  (info) Function deploy complete
+2025-11-05 15:40:57  (info) Deploying function
+2025-11-05 15:40:57  (info) Building
+2025-11-05 15:40:58  (info) Staging files and preparing base images
+2025-11-05 15:40:58  (warn) Using user provided base image, runtime interpreter version is provided by the base image
+2025-11-05 15:40:58  (info) Building processor image
+2025-11-05 15:42:53  (info) Build complete
+2025-11-05 15:43:12  (info) Function deploy complete
+2025-11-05 15:40:59  (info) Deploying function
+2025-11-05 15:40:59  (info) Building
+2025-11-05 15:40:59  (info) Staging files and preparing base images
+2025-11-05 15:40:59  (warn) Using user provided base image, runtime interpreter version is provided by the base image
+2025-11-05 15:41:00  (info) Building processor image
+2025-11-05 15:42:55  (info) Build complete
+2025-11-05 15:43:03  (info) Function deploy complete
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="log-models">
+<h3>Log Models<a class="headerlink" href="#log-models" title="Link to this heading">#</a></h3>
+<p>We’ll generate some dummy classification models and log them to the project.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_classification</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare a model and generate training set</span>
+
+<span class="n">X</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span><span class="n">n_features</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">"column_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"label"</span><span class="p">])</span>
+<span class="n">training_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Log your models</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">project</span><span class="o">.</span><span class="n">log_model</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="sa">f</span><span class="s2">"model_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">model</span><span class="p">),</span><span class="n">model_file</span><span class="o">=</span><span class="sa">f</span><span class="s1">'model.pkl'</span><span class="p">,</span><span class="n">training_set</span><span class="o">=</span><span class="n">training_set</span><span class="p">,</span><span class="n">label_column</span><span class="o">=</span><span class="s2">"label"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="deploy-serving-function">
+<h3>Deploy Serving Function<a class="headerlink" href="#deploy-serving-function" title="Link to this heading">#</a></h3>
+<p>We’ll use a basic serving function and enrich it with the logged models.</p>
+<p>Note that if you want to monitor a serving function along with its associated models, you must enable tracking by calling <code class="docutils literal notranslate"><span class="pre">set_tracking()</span></code>. Otherwise, the serving function’s requests won’t be monitored.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the serving</span>
+<span class="n">serving</span> <span class="o">=</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">new_function</span><span class="p">(</span><span class="s1">'serving-model-v1'</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">'serving'</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">serving</span><span class="o">.</span><span class="n">set_topology</span><span class="p">(</span><span class="s2">"router"</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">"sync"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply monitoring</span>
+<span class="n">serving</span><span class="o">.</span><span class="n">set_tracking</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add models to your serving</span>
+<span class="n">models_uri</span> <span class="o">=</span> <span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">uri</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">project</span><span class="o">.</span><span class="n">list_models</span><span class="p">(</span><span class="n">tag</span><span class="o">=</span><span class="s2">"latest"</span><span class="p">)]</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="k">for</span> <span class="n">uri</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">models_uri</span><span class="p">):</span>
+    <span class="n">serving</span><span class="o">.</span><span class="n">add_model</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="sa">f</span><span class="s1">'model_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span><span class="n">model_path</span><span class="o">=</span><span class="n">uri</span><span class="p">,</span><span class="n">class_name</span><span class="o">=</span><span class="s1">'mlrun.frameworks.sklearn.SKLearnModelServer'</span><span class="p">)</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 5/5 [00:00&lt;00:00, 22052.07it/s]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deploy serving</span>
+<span class="n">serving_function</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">deploy_function</span><span class="p">(</span><span class="n">serving</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-11-05 15:55:08,989 [info] Starting remote function deploy
+2025-11-05 15:55:09  (info) Deploying function
+2025-11-05 15:55:09  (info) Building
+2025-11-05 15:55:09  (info) Staging files and preparing base images
+2025-11-05 15:55:09  (warn) Using user provided base image, runtime interpreter version is provided by the base image
+2025-11-05 15:55:09  (info) Building processor image
+2025-11-05 15:56:54  (info) Build complete
+2025-11-05 15:57:06  (info) Function deploy complete
+&gt; 2025-11-05 15:57:10,181 [info] Model endpoint creation task completed with state succeeded
+&gt; 2025-11-05 15:57:10,181 [info] Successfully deployed function: {"external_invocation_urls":["count-events-demo-serving-model-v1.default-tenant.app.vmdev211.lab.iguazeng.com/"],"internal_invocation_urls":["nuclio-count-events-demo-serving-model-v1.default-tenant.svc.cluster.local:8080"]}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="invoke-serving">
+<h3>Invoke Serving<a class="headerlink" href="#invoke-serving" title="Link to this heading">#</a></h3>
+<p>Let’s generate some dummy data and invoke our serving function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">serving</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">get_function</span><span class="p">(</span><span class="s2">"serving-model-v1"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mf">0.51</span><span class="p">,</span><span class="mf">0.051</span><span class="p">,</span><span class="mf">0.6287761723991921</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8751269647375463</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0660002219502747</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.51</span><span class="p">,</span><span class="mf">0.051</span><span class="p">,</span><span class="mf">0.6287761723991921</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8751269647375463</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0660002219502747</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.51</span><span class="p">,</span><span class="mf">0.051</span><span class="p">,</span><span class="mf">0.6287761723991921</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8751269647375463</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0660002219502747</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.51</span><span class="p">,</span><span class="mf">0.051</span><span class="p">,</span><span class="mf">0.6287761723991921</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8751269647375463</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0660002219502747</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.51</span><span class="p">,</span><span class="mf">0.051</span><span class="p">,</span><span class="mf">0.6287761723991921</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8751269647375463</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0660002219502747</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">serving</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="sa">f</span><span class="s2">"/v2/models/model_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/infer"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"inputs"</span><span class="p">:</span> <span class="n">inputs</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="evaluate-app">
+<h1>Evaluate App<a class="headerlink" href="#evaluate-app" title="Link to this heading">#</a></h1>
+<p>Before deploying the Count Events application, let’s first test it to make sure it works as expected. We’ll import it as a module, which downloads the module file to your local filesystem, and then run it as a job using the <code class="docutils literal notranslate"><span class="pre">evaluate</span></code> mechanism.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import count events from the hub</span>
+<span class="n">count_events_app</span> <span class="o">=</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">"hub://count_events"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the app as a job</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">count_events_app</span><span class="o">.</span><span class="n">CountApp</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">func_path</span><span class="o">=</span><span class="s2">"count_events.py"</span><span class="p">,</span>
+    <span class="n">run_local</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">sample_data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"col"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]}),</span>
+                                   <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
+                                  <span class="n">endpoints</span><span class="o">=</span><span class="p">[</span><span class="s2">"model_0"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-11-05 15:57:37,746 [info] Changing function name - adding `"-batch"` suffix: {"func_name":"countapp-batch"}
+&gt; 2025-11-05 15:57:37,927 [info] Storing function: {"db":"http://mlrun-api:8080","name":"countapp-batch--handler","uid":"b7c240fd99ed4c9b940db6a587a53b80"}
+&gt; 2025-11-05 15:57:38,202 [info] Job is running in the background, pod: countapp-batch--handler-469fm
+&gt; 2025-11-05 15:57:42,390 [info] Counted events for model endpoint window: {"count":4,"end":"NaT","model_endpoint_name":"model_0","start":"NaT"}
+&gt; 2025-11-05 15:57:42,498 [info] To track results use the CLI: {"info_cmd":"mlrun get run b7c240fd99ed4c9b940db6a587a53b80 -p count-events-demo","logs_cmd":"mlrun logs b7c240fd99ed4c9b940db6a587a53b80 -p count-events-demo"}
+&gt; 2025-11-05 15:57:42,498 [info] Or click for UI: {"ui_url":"https://dashboard.default-tenant.app.vmdev211.lab.iguazeng.com/mlprojects/count-events-demo/jobs/monitor-jobs/countapp-batch--handler/b7c240fd99ed4c9b940db6a587a53b80/overview"}
+&gt; 2025-11-05 15:57:42,499 [info] Run execution finished: {"name":"countapp-batch--handler","status":"completed"}
+</pre></div>
+</div>
+<div class="output text_html"><style>
+.dictlist {
+  background-color: #4EC64B;
+  text-align: center;
+  margin: 4px;
+  border-radius: 3px; padding: 0px 3px 1px 3px; display: inline-block;}
+.artifact {
+  cursor: pointer;
+  background-color: #4EC64B;
+  text-align: left;
+  margin: 4px; border-radius: 3px; padding: 0px 3px 1px 3px; display: inline-block;
+}
+div.block.hidden {
+  display: none;
+}
+.clickable {
+  cursor: pointer;
+}
+.ellipsis {
+  display: inline-block;
+  max-width: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.master-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.master-tbl {
+  flex: 3
+}
+.master-wrapper > div {
+  margin: 4px;
+  padding: 10px;
+}
+iframe.fileview {
+  border: 0 none;
+  height: 100%;
+  width: 100%;
+  white-space: pre-wrap;
+}
+.pane-header-title {
+  width: 80%;
+  font-weight: 500;
+}
+.pane-header {
+  line-height: 1;
+  background-color: #4EC64B;
+  padding: 3px;
+}
+.pane-header .close {
+  font-size: 20px;
+  font-weight: 700;
+  float: right;
+  margin-top: -5px;
+}
+.master-wrapper .right-pane {
+  border: 1px inset silver;
+  width: 40%;
+  min-height: 300px;
+  flex: 3
+  min-width: 500px;
+}
+.master-wrapper * {
+  box-sizing: border-box;
+}
+</style><script>
+function copyToClipboard(fld) {
+    if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
+        var textarea = document.createElement('textarea');
+        textarea.textContent = fld.innerHTML;
+        textarea.style.position = 'fixed';
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try {
+            return document.execCommand('copy'); // Security exception may be thrown by some browsers.
+        } catch (ex) {
+
+        } finally {
+            document.body.removeChild(textarea);
+        }
+    }
+}
+function expandPanel(el) {
+  const panelName = "#" + el.getAttribute('paneName');
+
+  // Get the base URL of the current notebook
+  var baseUrl = window.location.origin;
+
+  // Construct the full URL
+  var fullUrl = new URL(el.title, baseUrl).href;
+
+  document.querySelector(panelName + "-title").innerHTML = fullUrl
+  iframe = document.querySelector(panelName + "-body");
+
+  const tblcss = `<style> body { font-family: Arial, Helvetica, sans-serif;}
+    #csv { margin-bottom: 15px; }
+    #csv table { border-collapse: collapse;}
+    #csv table td { padding: 4px 8px; border: 1px solid silver;} </style>`;
+
+  function csvToHtmlTable(str) {
+    return '<div id="csv"><table><tr><td>' +  str.replace(/[\n\r]+$/g, '').replace(/[\n\r]+/g, '</td></tr><tr><td>')
+      .replace(/,/g, '</td><td>') + '</td></tr></table></div>';
+  }
+
+  function reqListener () {
+    if (fullUrl.endsWith(".csv")) {
+      iframe.setAttribute("srcdoc", tblcss + csvToHtmlTable(this.responseText));
+    } else {
+      iframe.setAttribute("srcdoc", this.responseText);
+    }
+    console.log(this.responseText);
+  }
+
+  const oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", reqListener);
+  oReq.open("GET", fullUrl);
+  oReq.send();
+
+
+  //iframe.src = fullUrl;
+  const resultPane = document.querySelector(panelName + "-pane");
+  if (resultPane.classList.contains("hidden")) {
+    resultPane.classList.remove("hidden");
+  }
+}
+function closePanel(el) {
+  const panelName = "#" + el.getAttribute('paneName')
+  const resultPane = document.querySelector(panelName + "-pane");
+  if (!resultPane.classList.contains("hidden")) {
+    resultPane.classList.add("hidden");
+  }
+}
+
+</script>
+<div class="master-wrapper">
+<div class="block master-tbl"><div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>project</th>
+<th>uid</th>
+<th>iter</th>
+<th>start</th>
+<th>end</th>
+<th>state</th>
+<th>kind</th>
+<th>name</th>
+<th>labels</th>
+<th>inputs</th>
+<th>parameters</th>
+<th>results</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count-events-demo</td>
+<td><div title="b7c240fd99ed4c9b940db6a587a53b80"><a href="https://mlrun-ui.default-tenant.app.vmdev211.lab.iguazeng.com/mlprojects/count-events-demo/jobs/monitor-jobs/countapp-batch--handler/b7c240fd99ed4c9b940db6a587a53b80/overview" target="_blank">...87a53b80</a></div></td>
+<td>0</td>
+<td>Nov 05 15:57:41</td>
+<td>2025-11-05 15:57:42.474376+00:00</td>
+<td>completed</td>
+<td>run</td>
+<td>countapp-batch--handler</td>
+<td><div class="dictlist">v3io_user=iguazio</div><div class="dictlist">kind=job</div><div class="dictlist">owner=iguazio</div><div class="dictlist">mlrun/client_version=0.0.0+unstable</div><div class="dictlist">mlrun/client_python_version=3.11.12</div><div class="dictlist">host=countapp-batch--handler-469fm</div></td>
+<td><div title="store://datasets/count-events-demo/countapp-batch_sample_data#0@72d5b495-a0c5-4826-8a85-a6d97c803292^b93ca1c291844113eb9569f61f2938bbc8f5ea0d">sample_data</div></td>
+<td><div class="dictlist">endpoints=['model_0']</div><div class="dictlist">write_output=False</div><div class="dictlist">existing_data_handling=fail_on_overlap</div><div class="dictlist">stream_profile=None</div></td>
+<td><div class="dictlist">model_0-d25a6714a19b4027b9bccfe8adca8ddc_NaT_NaT={'metric_name': 'count', 'metric_value': 4.0}</div></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<div class="right-pane block hidden" id="result8ea5df75-pane">
+<div class="pane-header">
+<span class="pane-header-title" id="result8ea5df75-title">Title</span>
+<span class="close clickable" onclick="closePanel(this)" panename="result8ea5df75">×</span>
+</div>
+<iframe class="fileview" id="result8ea5df75-body"></iframe>
+</div>
+</div>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><b> &gt; to track results use the .show() or .logs() methods  or <a href="https://mlrun-ui.default-tenant.app.vmdev211.lab.iguazeng.com/mlprojects/count-events-demo/jobs/monitor-jobs/countapp-batch--handler/b7c240fd99ed4c9b940db6a587a53b80/overview" target="_blank">click here</a> to open in UI</b></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-11-05 15:57:46,373 [info] Run execution finished: {"name":"countapp-batch--handler","status":"completed"}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">.</span><span class="n">outputs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{'model_0-d25a6714a19b4027b9bccfe8adca8ddc_NaT_NaT': {'metric_name': 'count',
+  'metric_value': 4.0}}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that the application is available on your filesystem, you can register and deploy it just like any other custom application.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">set_model_monitoring_function</span><span class="p">(</span>
+    <span class="n">func</span><span class="o">=</span><span class="s2">"count_events.py"</span><span class="p">,</span>
+    <span class="n">application_class</span><span class="o">=</span><span class="s2">"CountApp"</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"CountEventsFromFile"</span><span class="p">,</span>
+    <span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project</span><span class="o">.</span><span class="n">deploy_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-11-05 16:09:48,293 [info] Starting remote function deploy
+2025-11-05 16:09:48  (info) Deploying function
+2025-11-05 16:09:48  (info) Building
+2025-11-05 16:09:48  (info) Staging files and preparing base images
+2025-11-05 16:09:48  (warn) Using user provided base image, runtime interpreter version is provided by the base image
+2025-11-05 16:09:48  (info) Building processor image
+2025-11-05 16:11:33  (info) Build complete
+2025-11-05 16:11:41  (info) Function deploy complete
+&gt; 2025-11-05 16:11:49,604 [info] Model endpoint creation task completed with state succeeded
+&gt; 2025-11-05 16:11:49,605 [info] Successfully deployed function: {"external_invocation_urls":[],"internal_invocation_urls":["nuclio-count-events-demo-counteventsfromfile.default-tenant.svc.cluster.local:8080"]}
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeployStatus(state=ready, outputs={'endpoint': 'http://nuclio-count-events-demo-counteventsfromfile.default-tenant.svc.cluster.local:8080', 'name': 'count-events-demo-counteventsfromfile'})
+</pre></div>
+</div>
+</div>
+</div>
+<section id="set-application-from-hub">
+<h2>Set Application from Hub<a class="headerlink" href="#set-application-from-hub" title="Link to this heading">#</a></h2>
+<p>As mentioned, you can set the application directly from the hub by providing a valid hub path (<code class="docutils literal notranslate"><span class="pre">hub://&lt;app_name&gt;</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">set_model_monitoring_function</span><span class="p">(</span>
+    <span class="n">func</span><span class="o">=</span><span class="s2">"hub://count_events"</span><span class="p">,</span>
+    <span class="n">application_class</span><span class="o">=</span><span class="s2">"CountApp"</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"CountEvents"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project</span><span class="o">.</span><span class="n">deploy_function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-11-05 15:57:58,659 [info] Starting remote function deploy
+2025-11-05 15:57:59  (info) Deploying function
+2025-11-05 15:57:59  (info) Building
+2025-11-05 15:57:59  (info) Staging files and preparing base images
+2025-11-05 15:57:59  (warn) Using user provided base image, runtime interpreter version is provided by the base image
+2025-11-05 15:57:59  (info) Building processor image
+2025-11-05 15:59:34  (info) Build complete
+2025-11-05 15:59:42  (info) Function deploy complete
+&gt; 2025-11-05 15:59:49,826 [info] Model endpoint creation task completed with state succeeded
+&gt; 2025-11-05 15:59:49,827 [info] Successfully deployed function: {"external_invocation_urls":[],"internal_invocation_urls":["nuclio-count-events-demo-countevents.default-tenant.svc.cluster.local:8080"]}
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeployStatus(state=ready, outputs={'endpoint': 'http://nuclio-count-events-demo-countevents.default-tenant.svc.cluster.local:8080', 'name': 'count-events-demo-countevents'})
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Count Events Demo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-project">Create a project</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-datastore-profiles-for-model-monitoring">Generate datastore profiles for model monitoring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-model-monitoring-infrastructure">Deploy model monitoring infrastructure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-models">Log Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-serving-function">Deploy Serving Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invoke-serving">Invoke Serving</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate-app">Evaluate App</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-application-from-hub">Set Application from Hub</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="bd-footer">
+</footer>
+</body>
+</html>

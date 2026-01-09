@@ -41,5 +41,54 @@ build-marketplace: ## Build marketplace for all sources (functions, modules, ste
 	uv run python -m cli.cli build-marketplace -s steps/src -sn steps -m marketplace -c master
 	@echo "✅ Marketplace build complete!"
 
+copy-ui: ## Copy marketplace data to ui/public/ (run after build-marketplace)
+	@if [ ! -d "marketplace" ]; then \
+		echo "❌ Error: marketplace/ directory not found. Run 'make build-marketplace' first."; \
+		exit 1; \
+	fi
+	@echo "Copying marketplace data to ui/public/..."
+	@mkdir -p ui/public
+	@if [ -f "marketplace/catalog.json" ]; then \
+		cp marketplace/catalog.json ui/public/catalog.json && \
+		echo "✅ Copied catalog.json"; \
+	else \
+		echo "⚠️  Warning: catalog.json not found in marketplace/"; \
+	fi
+	@if [ -d "marketplace/functions" ]; then \
+		rm -rf ui/public/functions && \
+		cp -r marketplace/functions ui/public/ && \
+		echo "✅ Copied functions/"; \
+	else \
+		echo "⚠️  Warning: functions/ not found in marketplace/"; \
+	fi
+	@if [ -d "marketplace/modules" ]; then \
+		rm -rf ui/public/modules && \
+		cp -r marketplace/modules ui/public/ && \
+		echo "✅ Copied modules/"; \
+	else \
+		echo "⚠️  Warning: modules/ not found in marketplace/"; \
+	fi
+	@if [ -d "marketplace/steps" ]; then \
+		rm -rf ui/public/steps && \
+		cp -r marketplace/steps ui/public/ && \
+		echo "✅ Copied steps/"; \
+	else \
+		echo "⚠️  Warning: steps/ not found in marketplace/"; \
+	fi
+	@echo "✅ Marketplace data copied to ui/public/"
+
+dev-ui: ## Start Next.js dev server (requires copy-ui first)
+	@if [ ! -f "ui/public/catalog.json" ]; then \
+		echo "❌ Error: ui/public/catalog.json not found."; \
+		echo "   Run 'make build-marketplace' then 'make copy-ui' first."; \
+		exit 1; \
+	fi
+	@cd ui && npm run dev
+
+build-ui: ## Build Next.js for production
+	@cd ui && npm run build
+
+dev: build-marketplace copy-ui dev-ui ## Build marketplace, copy to UI, and start dev server
+
 .DEFAULT_GOAL := help
 

@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../../" data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>structured_data_generator.structured_data_generator</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/custom.css?v=a569c0df" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="../../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>DOCUMENTATION_OPTIONS.pagename = '_modules/structured_data_generator/structured_data_generator';</script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="" spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../../index.html">
+<p class="title logo__title"></p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</button></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1></h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<h1>Source code for structured_data_generator.structured_data_generator</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2023 Iguazio</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the "License");</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an "AS IS" BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ast</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">tqdm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.chat_models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOpenAI</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_set_openai_secrets</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="s2">"OPENAI_API_KEY"</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s2">"OPENAI_API_BASE"</span>
+    <span class="c1"># Check if the key is already in the environment variables:</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span> <span class="ow">and</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="c1"># Check if mlrun is installed:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">mlrun</span>
+    <span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"One or more of the OpenAI required environment variables ('</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">', '</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s2">') are missing."</span>
+            <span class="sa">f</span><span class="s2">"Please set them as environment variables or install mlrun (`pip install mlrun`)"</span>
+            <span class="sa">f</span><span class="s2">"and set them as project secrets using `projecy.set_secrets`."</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Check if the key is in the secrets:</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">get_or_create_ctx</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"context"</span><span class="p">)</span>
+    <span class="n">openai_key</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get_secret</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="n">openai_base</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get_secret</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+    <span class="c1"># If the key is not in the secrets, return False:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">openai_key</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Could not find OpenAI API key in the environment variables or secrets,"</span>
+            <span class="sa">f</span><span class="s2">" please set it as: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">."</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">openai_base</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Could not find OpenAI API base in the environment variables or secrets,"</span>
+            <span class="sa">f</span><span class="s2">" please set it as: </span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s2">."</span>
+        <span class="p">)</span>
+    <span class="c1"># If the key is in the secrets, set it in the environment variables and return True:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">openai_key</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">base</span><span class="p">]</span> <span class="o">=</span> <span class="n">openai_base</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<div class="viewcode-block" id="generate_data">
+<a class="viewcode-back" href="documentation.html#structured_data_generator.structured_data_generator.generate_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_data</span><span class="p">(</span>
+    <span class="n">fields</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+    <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"gpt-3.5-turbo"</span><span class="p">,</span>
+    <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"en"</span><span class="p">,</span>
+    <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Structured data of elements according to the given parameters.</span>
+<span class="sd">    The data can be later logged as a structured file with MLRun's `returns` parameter.</span>
+
+<span class="sd">    :param fields: A list of fields to randomly generate.</span>
+<span class="sd">    :param amount: The number of variants to generate.</span>
+<span class="sd">    :param model_name: The name of the model to use for conversation generation.</span>
+<span class="sd">                       You should choose one of GPT-4 or GPT-3.5 from the list here: https://platform.openai.com/docs/models.</span>
+<span class="sd">                       Default: 'gpt-3.5-turbo'.</span>
+<span class="sd">    :param language: The language to use for the generated conversation text.</span>
+<span class="sd">    :param chunk_size: Number of samples generated at each GPT query.</span>
+<span class="sd">    """</span>
+    <span class="n">instructions</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+        <span class="c1"># Split the field to key and instruction:</span>
+        <span class="k">if</span> <span class="s2">":"</span> <span class="ow">in</span> <span class="n">field</span><span class="p">:</span>
+            <span class="n">key</span><span class="p">,</span> <span class="n">instruction</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">":"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">key</span><span class="p">,</span> <span class="n">instruction</span> <span class="o">=</span> <span class="n">field</span><span class="p">,</span> <span class="s2">"no special instruction"</span>
+        <span class="c1"># Replace spaces with underscores for the key to be used as a json key:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
+        <span class="n">instructions</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"* </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">instruction</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+
+    <span class="c1"># Create the prompt structure:</span>
+    <span class="n">prompt_structure</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"generate the following values </span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2"> times randomly, in an order that creates a json table.</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="sa">f</span><span class="s2">"Use the following keys and instructions (example: 'key: instruction or no special instruction'): "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">instructions</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="sa">f</span><span class="s2">"Please generate the values in </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2"> language. </span><span class="se">\n</span><span class="s2">"</span>
+        <span class="sa">f</span><span class="s2">"Make sure the names of the keys are the same as the given field name.</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="sa">f</span><span class="s2">"Please return only the json format without any introduction and ending"</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Set the OpenAI secrets:</span>
+    <span class="n">_set_openai_secrets</span><span class="p">()</span>
+
+    <span class="c1"># Load the OpenAI model using langchain:</span>
+    <span class="n">llm</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model_name</span><span class="p">)</span>
+
+    <span class="c1"># Start generating data:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">((</span><span class="n">amount</span> <span class="o">//</span> <span class="n">chunk_size</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">"Generating"</span><span class="p">):</span>
+        <span class="c1"># We try to generate the data 3 times, if we fail we raise an error:</span>
+        <span class="k">for</span> <span class="n">tryout</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="c1"># If the amount wanted is bigger than the chunk size, we generate a chunk of data in the size of the chunk</span>
+            <span class="c1"># and decrease the amount by the chunk size.</span>
+            <span class="c1"># otherwise we generate a chunk of data in the size of the amount:</span>
+            <span class="k">if</span> <span class="n">amount</span> <span class="o">&gt;</span> <span class="n">chunk_size</span><span class="p">:</span>
+                <span class="n">current_chunk_size</span> <span class="o">=</span> <span class="n">chunk_size</span>
+                <span class="n">amount</span> <span class="o">-=</span> <span class="n">chunk_size</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current_chunk_size</span> <span class="o">=</span> <span class="n">amount</span>
+
+            <span class="c1"># Create the prompt:</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="n">prompt_structure</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">amount</span><span class="o">=</span><span class="n">current_chunk_size</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Generate a chunk of data:</span>
+            <span class="n">chunk_data</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">prompt</span><span class="p">)</span>
+
+            <span class="c1"># Validate the response for correct python `list` structure</span>
+            <span class="n">chunk_data</span> <span class="o">=</span> <span class="n">chunk_data</span><span class="p">[</span><span class="n">chunk_data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"["</span><span class="p">)</span> <span class="p">:</span> <span class="n">chunk_data</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s2">"]"</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">chunk_data</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">"["</span><span class="p">)</span> <span class="o">!=</span> <span class="n">chunk_data</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">"]"</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="s2">"Failed to get proper json format from model, number of '[' doesn't match number of ']'."</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">chunk_data</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">chunk_data</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">+=</span> <span class="n">chunk_data</span>
+            <span class="k">break</span>
+        <span class="k">if</span> <span class="n">tryout</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Could not generate a proper json format for the given fields, using given model: </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">."</span>
+                <span class="sa">f</span><span class="s2">" Hint: Gpt-4 works best for most scenarios."</span>
+            <span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+</pre></div>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="bd-footer">
+</footer>
+</body>
+</html>

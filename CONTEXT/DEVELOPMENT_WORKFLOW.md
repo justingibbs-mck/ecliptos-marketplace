@@ -40,9 +40,9 @@ ls marketplace/functions/master/
 # Should see: catalog.json, tags.json, _static/, and directories for each function
 ```
 
-## Future Workflow (After Frontend is Created)
+## Current Workflow (After Frontend is Created)
 
-Once the `ui/` directory is set up, the workflow will be:
+Once the `ui/` directory is set up, the workflow is:
 
 ### Option 1: Step-by-Step
 
@@ -50,8 +50,8 @@ Once the `ui/` directory is set up, the workflow will be:
 # 1. Build marketplace
 make build-marketplace
 
-# 2. Link marketplace data to frontend
-make link-ui
+# 2. Copy marketplace data to frontend
+make copy-ui
 
 # 3. Start frontend dev server
 make dev-ui
@@ -60,14 +60,16 @@ make dev-ui
 ### Option 2: One Command (Combined)
 
 ```bash
-# Build + Link + Start dev server
+# Build + Copy + Start dev server (all in one)
 make dev
 ```
 
 This will:
-1. Build the marketplace (if needed)
-2. Create symlinks in `ui/public/` pointing to `marketplace/`
+1. Build the marketplace (creates `marketplace/` directory)
+2. Copy marketplace data to `ui/public/` (catalog.json, functions/, modules/, steps/)
 3. Start Next.js dev server on `http://localhost:3000`
+
+**Important**: After rebuilding the marketplace, you must run `make copy-ui` to update the UI with the latest data.
 
 ## What Happens When You Build
 
@@ -115,24 +117,26 @@ uv run python -m cli.cli build-marketplace -s modules/src -sn modules -m marketp
 - Faster dependency resolution
 - Better reproducibility across different systems
 
-### Watch Mode (Future Enhancement)
+### Watch Mode
 
-Once the frontend is set up, Next.js will hot-reload when you change frontend code. However, if you change marketplace source files, you'll need to:
+Next.js will hot-reload when you change frontend code. However, if you change marketplace source files, you'll need to:
 
 1. Rebuild marketplace: `make build-marketplace`
-2. The symlinks will automatically point to the new files
+2. Copy updated data to UI: `make copy-ui`
 3. Refresh the browser (or Next.js might auto-reload)
+
+**Note**: Currently using file copy (not symlinks) for cross-platform compatibility. The copy step is required after each marketplace rebuild.
 
 ### Troubleshooting
 
 **Problem**: Frontend can't find `catalog.json`
-- **Solution**: Run `make build-marketplace` first, then `make link-ui`
+- **Solution**: Run `make build-marketplace` first, then `make copy-ui`
 
 **Problem**: Changes to functions don't show up
-- **Solution**: Rebuild marketplace, then refresh browser
+- **Solution**: Rebuild marketplace with `make build-marketplace`, then copy to UI with `make copy-ui`, then refresh browser
 
-**Problem**: Symlinks not working (Windows)
-- **Solution**: Use the copy-based script instead (see frontend integration plan)
+**Problem**: UI shows old data after marketplace rebuild
+- **Solution**: Run `make copy-ui` after rebuilding the marketplace to update `ui/public/` with the latest data
 
 ## Summary
 
@@ -152,7 +156,7 @@ Once the frontend is set up, Next.js will hot-reload when you change frontend co
 │   HTML docs)    │
 └────────┬────────┘
          │
-         │ make link-ui (symlinks)
+         │ make copy-ui (copies files)
          │
          ▼
 ┌─────────────────┐
@@ -170,8 +174,11 @@ Once the frontend is set up, Next.js will hot-reload when you change frontend co
 ```
 
 **TL;DR**: 
-1. `make build-marketplace` → Creates all marketplace files
-2. `make link-ui` → Connects marketplace to frontend (once frontend exists)
-3. `make dev-ui` → Starts frontend dev server (once frontend exists)
-4. Open browser → See your UI!
+1. `make build-marketplace` → Creates all marketplace files in `marketplace/`
+2. `make copy-ui` → Copies marketplace data to `ui/public/` (run after each rebuild)
+3. `make dev-ui` → Starts frontend dev server
+4. **OR** `make dev` → Does all three steps above in one command
+5. Open browser → See your UI!
+
+**Important**: After rebuilding the marketplace, always run `make copy-ui` to update the UI with the latest data.
 

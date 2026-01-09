@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../../" data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>agent_deployer.agent_deployer</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/custom.css?v=a569c0df" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="../../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>DOCUMENTATION_OPTIONS.pagename = '_modules/agent_deployer/agent_deployer';</script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="" spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../../index.html">
+<p class="title logo__title"></p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</button></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1></h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<h1>Source code for agent_deployer.agent_deployer</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2024 Iguazio</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the "License");</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an "AS IS" BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">mlrun.errors</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_current_project</span><span class="p">,</span> <span class="n">code_to_function</span><span class="p">,</span> <span class="n">mlconf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.runtimes</span><span class="w"> </span><span class="kn">import</span> <span class="n">ServingRuntime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.serving</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelRunnerStep</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.datastore.datastore_profile</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DatastoreProfileV3io</span><span class="p">,</span>
+    <span class="n">DatastoreProfileKafkaStream</span><span class="p">,</span>
+    <span class="n">DatastoreProfileTDEngine</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+
+
+<div class="viewcode-block" id="AgentDeployer">
+<a class="viewcode-back" href="documentation.html#agent_deployer.agent_deployer.AgentDeployer">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AgentDeployer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">agent_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">model_class_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">function</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">result_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">inputs_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">outputs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">requirements</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">image</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"mlrun/mlrun"</span><span class="p">,</span>
+        <span class="n">set_model_monitoring</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">model_params</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Class to deploy an agent as a serving function in MLRun.</span>
+
+<span class="sd">        :param agent_name: Name of the agent</span>
+<span class="sd">        :param model_class_name: Model class name. If LLModel is chosen</span>
+<span class="sd">                                    (either by name `LLModel` or by its full path, e.g. mlrun.serving.states.LLModel),</span>
+<span class="sd">                                    outputs will be overridden with UsageResponseKeys fields.</span>
+<span class="sd">        :param function: Path to the function file.</span>
+<span class="sd">        :param result_path: when specified selects the key/path in the output event to use as model monitoring</span>
+<span class="sd">                                      outputs this require that the output event body will behave like a dict,</span>
+<span class="sd">                                      expects scopes to be defined by dot notation (e.g "data.d").</span>
+<span class="sd">        :param inputs_path: when specified selects the key/path in the event to use as model monitoring inputs</span>
+<span class="sd">                                      this require that the event body will behave like a dict, expects scopes to be</span>
+<span class="sd">                                      defined by dot notation (e.g "data.d").</span>
+<span class="sd">        :param outputs: list of the model outputs (e.g. labels) ,if provided will override the outputs</span>
+<span class="sd">                                      that been configured in the model artifact, please note that those outputs need to</span>
+<span class="sd">                                      be equal to the model_class predict method outputs (length, and order).</span>
+<span class="sd">        :param requirements: List of additional requirements for the function</span>
+<span class="sd">        :param image: Docker image to be used for the function</span>
+<span class="sd">        :param set_model_monitoring: Whether to configure model monitoring</span>
+<span class="sd">        :param model_params: Parameters for model instantiation</span>
+<span class="sd">        """</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_function</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_project_name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agent_name</span> <span class="o">=</span> <span class="n">agent_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_class_name</span> <span class="o">=</span> <span class="n">model_class_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">function_file</span> <span class="o">=</span> <span class="n">function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">requirements</span> <span class="o">=</span> <span class="n">requirements</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_params</span> <span class="o">=</span> <span class="n">model_params</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result_path</span> <span class="o">=</span> <span class="n">result_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inputs_path</span> <span class="o">=</span> <span class="n">inputs_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_schema</span> <span class="o">=</span> <span class="n">outputs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span>
+        <span class="k">if</span> <span class="n">set_model_monitoring</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">configure_model_monitoring</span><span class="p">()</span>
+
+<div class="viewcode-block" id="AgentDeployer.configure_model_monitoring">
+<a class="viewcode-back" href="documentation.html#agent_deployer.agent_deployer.AgentDeployer.configure_model_monitoring">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">configure_model_monitoring</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Configure model monitoring for the active project."""</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">MLRunInvalidArgumentError</span><span class="p">(</span>
+                <span class="s2">"No active project detected, unable to set model monitoring"</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">mlconf</span><span class="o">.</span><span class="n">is_ce_mode</span><span class="p">():</span>
+            <span class="n">mlrun_namespace</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"MLRUN_NAMESPACE"</span><span class="p">,</span> <span class="s2">"mlrun"</span><span class="p">)</span>
+            <span class="n">tsdb_profile</span> <span class="o">=</span> <span class="n">DatastoreProfileTDEngine</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">"tdengine-tsdb-profile"</span><span class="p">,</span>
+                <span class="n">user</span><span class="o">=</span><span class="s2">"root"</span><span class="p">,</span>
+                <span class="n">password</span><span class="o">=</span><span class="s2">"taosdata"</span><span class="p">,</span>
+                <span class="n">host</span><span class="o">=</span><span class="sa">f</span><span class="s2">"tdengine-tsdb.</span><span class="si">{</span><span class="n">mlrun_namespace</span><span class="si">}</span><span class="s2">.svc.cluster.local"</span><span class="p">,</span>
+                <span class="n">port</span><span class="o">=</span><span class="s2">"6041"</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="n">stream_profile</span> <span class="o">=</span> <span class="n">DatastoreProfileKafkaStream</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">"kafka-stream-profile"</span><span class="p">,</span>
+                <span class="n">brokers</span><span class="o">=</span><span class="sa">f</span><span class="s2">"kafka-stream.</span><span class="si">{</span><span class="n">mlrun_namespace</span><span class="si">}</span><span class="s2">.svc.cluster.local:9092"</span><span class="p">,</span>
+                <span class="n">topics</span><span class="o">=</span><span class="p">[],</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tsdb_profile</span> <span class="o">=</span> <span class="n">DatastoreProfileV3io</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">"v3io-tsdb-profile"</span><span class="p">,</span>
+                <span class="n">v3io_access_key</span><span class="o">=</span><span class="n">mlconf</span><span class="o">.</span><span class="n">get_v3io_access_key</span><span class="p">(),</span>
+            <span class="p">)</span>
+            <span class="n">stream_profile</span> <span class="o">=</span> <span class="n">DatastoreProfileV3io</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">"v3io-stream-profile"</span><span class="p">,</span>
+                <span class="n">v3io_access_key</span><span class="o">=</span><span class="n">mlconf</span><span class="o">.</span><span class="n">get_v3io_access_key</span><span class="p">(),</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">register_datastore_profile</span><span class="p">(</span><span class="n">tsdb_profile</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">register_datastore_profile</span><span class="p">(</span><span class="n">stream_profile</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">set_model_monitoring_credentials</span><span class="p">(</span>
+            <span class="n">stream_profile_name</span><span class="o">=</span><span class="n">stream_profile</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">tsdb_profile_name</span><span class="o">=</span><span class="n">tsdb_profile</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">replace_creds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">enable_model_monitoring</span><span class="p">(</span>
+                <span class="n">base_period</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">deploy_histogram_data_drift_app</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">mlrun</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">MLRunConflictError</span><span class="p">,</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">MLRunHTTPError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">"While calling enable_model_monitoring, caught expected exception:"</span><span class="p">,</span>
+                <span class="n">error</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+            <span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Get the current MLRun project."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_project</span> <span class="o">=</span> <span class="n">get_current_project</span><span class="p">(</span><span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">project_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Get the name of the current MLRun project."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_name</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_project_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">name</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_name</span>
+        <span class="k">raise</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">MLRunInvalidArgumentError</span><span class="p">(</span>
+            <span class="s2">"No current project found to get project name"</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="AgentDeployer.get_function">
+<a class="viewcode-back" href="documentation.html#agent_deployer.agent_deployer.AgentDeployer.get_function">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_function</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ServingRuntime</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Get the serving function, loading it if necessary.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_load_function</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function</span></div>
+
+
+<div class="viewcode-block" id="AgentDeployer.deploy_function">
+<a class="viewcode-back" href="documentation.html#agent_deployer.agent_deployer.AgentDeployer.deploy_function">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">deploy_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable_tracking</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ServingRuntime</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Deploy the agent as a serving function in MLRun.</span>
+<span class="sd">        :param enable_tracking: Whether to enable tracking for the function.</span>
+<span class="sd">        """</span>
+
+        <span class="n">function</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_function</span><span class="p">()</span>
+        <span class="n">function</span><span class="o">.</span><span class="n">set_tracking</span><span class="p">(</span><span class="n">enable_tracking</span><span class="o">=</span><span class="n">enable_tracking</span><span class="p">)</span>
+        <span class="n">function</span><span class="o">.</span><span class="n">deploy</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">function</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_function</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ServingRuntime</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_function</span> <span class="o">=</span> <span class="n">code_to_function</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_name</span><span class="si">}</span><span class="s2">_serving_function"</span><span class="p">,</span>
+            <span class="n">filename</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">function_file</span><span class="p">,</span>
+            <span class="n">project</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project_name</span><span class="p">,</span>
+            <span class="n">kind</span><span class="o">=</span><span class="s2">"serving"</span><span class="p">,</span>
+            <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">image</span><span class="p">,</span>
+            <span class="n">requirements</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">requirements</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function</span><span class="o">.</span><span class="n">set_topology</span><span class="p">(</span><span class="n">topology</span><span class="o">=</span><span class="s2">"flow"</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">"async"</span><span class="p">)</span>
+        <span class="n">model_runner_step</span> <span class="o">=</span> <span class="n">ModelRunnerStep</span><span class="p">()</span>
+        <span class="n">model_runner_step</span><span class="o">.</span><span class="n">add_model</span><span class="p">(</span>
+            <span class="n">model_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_class_name</span><span class="p">,</span>
+            <span class="n">endpoint_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">agent_name</span><span class="p">,</span>
+            <span class="n">result_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">result_path</span><span class="p">,</span>
+            <span class="n">input_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">inputs_path</span><span class="p">,</span>
+            <span class="n">outputs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">output_schema</span><span class="p">,</span>
+            <span class="n">execution_mechanism</span><span class="o">=</span><span class="s2">"naive"</span><span class="p">,</span>
+            <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">model_params</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">model_runner_step</span><span class="p">)</span><span class="o">.</span><span class="n">respond</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_function</span></div>
+
+</pre></div>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="bd-footer">
+</footer>
+</body>
+</html>

@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../../" data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>evidently_iris.evidently_iris</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/custom.css?v=a569c0df" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="../../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>DOCUMENTATION_OPTIONS.pagename = '_modules/evidently_iris/evidently_iris';</script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="" spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../../index.html">
+<p class="title logo__title"></p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</button></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1></h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<h1>Source code for evidently_iris.evidently_iris</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2025 Iguazio</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the "License");</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#   http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an "AS IS" BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_iris</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">mlrun.model_monitoring.applications.context</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mm_context</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.common.schemas.model_monitoring.constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ResultKindApp</span><span class="p">,</span>
+    <span class="n">ResultStatusApp</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.feature_store.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm_column_name</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.model_monitoring.applications</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelMonitoringApplicationResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mlrun.model_monitoring.applications.evidently</span><span class="w"> </span><span class="kn">import</span> <span class="n">EvidentlyModelMonitoringApplicationBase</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">evidently.core.report</span><span class="w"> </span><span class="kn">import</span> <span class="n">Report</span><span class="p">,</span> <span class="n">Snapshot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">evidently.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">DatasetMissingValueCount</span><span class="p">,</span> <span class="n">ValueDrift</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">evidently.presets</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataDriftPreset</span><span class="p">,</span> <span class="n">DataSummaryPreset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">evidently.ui.workspace</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">STR_UUID</span><span class="p">,</span>
+    <span class="n">OrgID</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">_PROJECT_NAME</span> <span class="o">=</span> <span class="s2">"Iris Monitoring"</span>
+<span class="n">_PROJECT_DESCRIPTION</span> <span class="o">=</span> <span class="s2">"Test project using iris dataset"</span>
+
+
+<div class="viewcode-block" id="EvidentlyIrisMonitoringApp">
+<a class="viewcode-back" href="documentation.html#evidently_iris.evidently_iris.EvidentlyIrisMonitoringApp">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EvidentlyIrisMonitoringApp</span><span class="p">(</span><span class="n">EvidentlyModelMonitoringApplicationBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    This model monitoring application is a simple example of integrating MLRun with Evidently for data monitoring,</span>
+<span class="sd">    which you can adapt to fit your own project needs or use as a reference implementation.</span>
+<span class="sd">    """</span>
+    <span class="n">NAME</span> <span class="o">=</span> <span class="s2">"Evidently-App-Test"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">evidently_project_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">"STR_UUID"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">evidently_workspace_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">cloud_workspace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">evidently_organization_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">"OrgID"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">org_id</span> <span class="o">=</span> <span class="n">evidently_organization_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_iris_data</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">evidently_project_id</span><span class="o">=</span><span class="n">evidently_project_id</span><span class="p">,</span>
+            <span class="n">evidently_workspace_path</span><span class="o">=</span><span class="n">evidently_workspace_path</span><span class="p">,</span>
+            <span class="n">cloud_workspace</span><span class="o">=</span><span class="n">cloud_workspace</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_init_iris_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">norm_column_name</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EvidentlyIrisMonitoringApp.do_tracking">
+<a class="viewcode-back" href="documentation.html#evidently_iris.evidently_iris.EvidentlyIrisMonitoringApp.do_tracking">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">do_tracking</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">monitoring_context</span><span class="p">:</span> <span class="n">mm_context</span><span class="o">.</span><span class="n">MonitoringApplicationContext</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelMonitoringApplicationResult</span><span class="p">:</span>
+        <span class="n">monitoring_context</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Running evidently app"</span><span class="p">)</span>
+
+        <span class="n">sample_df</span> <span class="o">=</span> <span class="n">monitoring_context</span><span class="o">.</span><span class="n">sample_df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+
+        <span class="n">data_drift_report_run</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_report_run</span><span class="p">(</span>
+            <span class="n">sample_df</span><span class="p">,</span> <span class="n">monitoring_context</span><span class="o">.</span><span class="n">end_infer_time</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">evidently_workspace</span><span class="o">.</span><span class="n">add_run</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">evidently_project_id</span><span class="p">,</span> <span class="n">data_drift_report_run</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_evidently_object</span><span class="p">(</span>
+            <span class="n">monitoring_context</span><span class="p">,</span> <span class="n">data_drift_report_run</span><span class="p">,</span> <span class="s2">"evidently_report"</span>
+        <span class="p">)</span>
+        <span class="n">monitoring_context</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Logged evidently object"</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ModelMonitoringApplicationResult</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">"data_drift_test"</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+            <span class="n">kind</span><span class="o">=</span><span class="n">ResultKindApp</span><span class="o">.</span><span class="n">data_drift</span><span class="p">,</span>
+            <span class="n">status</span><span class="o">=</span><span class="n">ResultStatusApp</span><span class="o">.</span><span class="n">potential_detection</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EvidentlyIrisMonitoringApp.create_report_run">
+<a class="viewcode-back" href="documentation.html#evidently_iris.evidently_iris.EvidentlyIrisMonitoringApp.create_report_run">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_report_run</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">sample_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">schedule_time</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"Snapshot"</span><span class="p">:</span>
+        <span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">DataDriftPreset</span><span class="p">(),</span>
+            <span class="n">DatasetMissingValueCount</span><span class="p">(),</span>
+            <span class="n">DataSummaryPreset</span><span class="p">(),</span>
+        <span class="p">]</span>
+        <span class="n">metrics</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">ValueDrift</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="n">col_name</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"wasserstein"</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">col_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="n">data_drift_report</span> <span class="o">=</span> <span class="n">Report</span><span class="p">(</span>
+            <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+            <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"timestamp"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">schedule_time</span><span class="p">)},</span>
+            <span class="n">include_tests</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">data_drift_report</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="n">current_data</span><span class="o">=</span><span class="n">sample_df</span><span class="p">,</span> <span class="n">reference_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">train_set</span>
+        <span class="p">)</span></div>
+</div>
+
+</pre></div>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="bd-footer">
+</footer>
+</body>
+</html>

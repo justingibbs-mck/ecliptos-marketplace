@@ -156,3 +156,4 @@ ui/node_modules/
 ui/.env*.local
 ui/out/
 ui/.swc/
+ui/public/  # Copied marketplace build output (catalog.json, functions/, modules/, steps/)

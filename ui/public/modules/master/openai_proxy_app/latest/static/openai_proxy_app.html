@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../../" data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>openai_proxy_app.openai_proxy_app</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/custom.css?v=a569c0df" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="../../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>DOCUMENTATION_OPTIONS.pagename = '_modules/openai_proxy_app/openai_proxy_app';</script>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="" spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../../index.html">
+<p class="title logo__title"></p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</button></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1></h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<h1>Source code for openai_proxy_app.openai_proxy_app</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright 2025 Iguazio</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the "License");</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an "AS IS" BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1">#</span>
+<span class="c1">#This module acts as a lightweight gateway to OpenAI-compatible APIs.</span>
+<span class="c1">#You can send chat prompts, create embeddings, or get model responses without worrying about authentication or endpoint differences. </span>
+<span class="c1">#It simplifies access so you can test, analyze, or integrate AI features directly into your projects or notebooks with minimal setup.</span>
+
+
+<span class="n">BASE64</span> <span class="o">=</span> <span class="s2">"IyBvcGVuYWlfcHJveHkvb3BlbmFpLnB5CgppbXBvcnQgb3MKaW1wb3J0IGpzb24KZnJvbSB1cmxsaWIucGFyc2UgaW1wb3J0IHVybGpvaW4KZnJvbSB0eXBpbmcgaW1wb3J0IEFueSwgRGljdCwgTGlzdCwgT3B0aW9uYWwKCmltcG9ydCByZXF1ZXN0cwpmcm9tIGZhc3RhcGkgaW1wb3J0IEZhc3RBUEksIFJlcXVlc3QsIFJlc3BvbnNlLCBCb2R5CgphcHAgPSBGYXN0QVBJKAogICAgdGl0bGU9Ik9wZW5BSSBQcm94eSBBcHAiLAogICAgZGVzY3JpcHRpb249IkxvY2FsIEZhc3RBUEkgcHJveHkgZm9yIE9wZW5BSSBzdHlsZSBlbmRwb2ludHMiLAogICAgdmVyc2lvbj0iMS4wLjAiLAopCgpPUEVOQUlfQkFTRV9VUkwgPSBvcy5nZXRlbnYoIk9QRU5BSV9CQVNFX1VSTCIsICJodHRwczovL2FwaS5vcGVuYWkuY29tIikucnN0cmlwKCIvIikKT1BFTkFJX0FQSV9LRVkgPSBvcy5nZXRlbnYoIk9QRU5BSV9BUElfS0VZIiwgIiIpCk9QRU5BSV9ERUZBVUxUX01PREVMID0gb3MuZ2V0ZW52KCJPUEVOQUlfREVGQVVMVF9NT0RFTCIsICJncHQtNG8tbWluaSIpCgoKZGVmIGJ1aWxkX2hlYWRlcnMoaW5jb21pbmc6IGRpY3QpIC0+IGRpY3Q6CiAgICBoZWFkZXJzID0ge30KICAgIGF1dGggPSBpbmNvbWluZy5nZXQoImF1dGhvcml6YXRpb24iKSBvciBpbmNvbWluZy5nZXQoIkF1dGhvcml6YXRpb24iKQogICAgaWYgYXV0aDoKICAgICAgICBoZWFkZXJzWyJBdXRob3JpemF0aW9uIl0gPSBhdXRoCiAgICBlbGlmIE9QRU5BSV9BUElfS0VZOgogICAgICAgIGhlYWRlcnNbIkF1dGhvcml6YXRpb24iXSA9IGYiQmVhcmVyIHtPUEVOQUlfQVBJX0tFWX0iCiAgICBjdHlwZSA9IGluY29taW5nLmdldCgiY29udGVudC10eXBlIikgb3IgaW5jb21pbmcuZ2V0KCJDb250ZW50LVR5cGUiKSBvciAiYXBwbGljYXRpb24vanNvbiIKICAgIGhlYWRlcnNbIkNvbnRlbnQtVHlwZSJdID0gY3R5cGUKICAgIHJldHVybiBoZWFkZXJzCgoKZGVmIGJ1aWxkX3RhcmdldChwYXRoOiBzdHIpIC0+IHN0cjoKICAgIGJhc2UgPSBPUEVOQUlfQkFTRV9VUkwKICAgIGlmIGJhc2UuZW5kc3dpdGgoIi92MSIpIG9yIGJhc2UuZW5kc3dpdGgoIi92MS8iKToKICAgICAgICBiYXNlID0gYmFzZVs6LTNdIGlmIGJhc2UuZW5kc3dpdGgoIi92MSIpIGVsc2UgYmFzZVs6LTRdCiAgICByZXR1cm4gdXJsam9pbihiYXNlICsgIi8iLCBwYXRoLmxzdHJpcCgiLyIpKQoKCmRlZiBmb3J3YXJkX2pzb24ocGF0aDogc3RyLCBib2R5OiBkaWN0LCBoZWFkZXJzOiBkaWN0LCBxdWVyeTogZGljdCk6CiAgICB0YXJnZXQgPSBidWlsZF90YXJnZXQocGF0aCkKICAgIHJlc3AgPSByZXF1ZXN0cy5wb3N0KAogICAgICAgIHRhcmdldCwKICAgICAgICBoZWFkZXJzPWhlYWRlcnMsCiAgICAgICAgcGFyYW1zPXF1ZXJ5LAogICAgICAgIGpzb249Ym9keSwKICAgICAgICB0aW1lb3V0PTYwLAogICAgKQogICAgcmV0dXJuIHJlc3AKCkBhcHAuZ2V0KCIvIikKZGVmIGhlYWx0aCgpOgogICAgcmV0dXJuIHsic3RhdHVzIjogIm9rIn0KCgojIHJlbGF4ZWQgY2hhdCBlbmRwb2ludCwgYWNjZXB0cyBhbnkgSlNPTiB0aGF0IGluY2x1ZGVzIG1lc3NhZ2VzCkBhcHAucG9zdCgiL3YxL2NoYXQvY29tcGxldGlvbnMiKQphc3luYyBkZWYgY2hhdF9jb21wbGV0aW9ucygKICAgIHJlcXVlc3Q6IFJlcXVlc3QsCiAgICBwYXlsb2FkOiBEaWN0W3N0ciwgQW55XSA9IEJvZHkoLi4uKSwKKToKICAgIGlmICJtZXNzYWdlcyIgbm90IGluIHBheWxvYWQgb3Igbm90IGlzaW5zdGFuY2UocGF5bG9hZFsibWVzc2FnZXMiXSwgbGlzdCk6CiAgICAgICAgcmV0dXJuIFJlc3BvbnNlKAogICAgICAgICAgICBjb250ZW50PWpzb24uZHVtcHMoeyJlcnJvciI6ICJtZXNzYWdlcyBtdXN0IGJlIGEgbGlzdCBvZiBjaGF0IG1lc3NhZ2VzIn0pLAogICAgICAgICAgICBzdGF0dXNfY29kZT00MDAsCiAgICAgICAgICAgIG1lZGlhX3R5cGU9ImFwcGxpY2F0aW9uL2pzb24iLAogICAgICAgICkKCiAgICBpZiAibW9kZWwiIG5vdCBpbiBwYXlsb2FkIG9yIHBheWxvYWRbIm1vZGVsIl0gaXMgTm9uZToKICAgICAgICBwYXlsb2FkWyJtb2RlbCJdID0gT1BFTkFJX0RFRkFVTFRfTU9ERUwKCiAgICBoZWFkZXJzID0gYnVpbGRfaGVhZGVycyhkaWN0KHJlcXVlc3QuaGVhZGVycykpCiAgICByZXNwID0gZm9yd2FyZF9qc29uKCIvdjEvY2hhdC9jb21wbGV0aW9ucyIsIHBheWxvYWQsIGhlYWRlcnMsIGRpY3QocmVxdWVzdC5xdWVyeV9wYXJhbXMpKQogICAgcmV0dXJuIFJlc3BvbnNlKAogICAgICAgIGNvbnRlbnQ9cmVzcC5jb250ZW50LAogICAgICAgIHN0YXR1c19jb2RlPXJlc3Auc3RhdHVzX2NvZGUsCiAgICAgICAgbWVkaWFfdHlwZT1yZXNwLmhlYWRlcnMuZ2V0KCJDb250ZW50LVR5cGUiLCAiYXBwbGljYXRpb24vanNvbiIpLAogICAgKQoKCkBhcHAucG9zdCgiL3YxL2VtYmVkZGluZ3MiKQphc3luYyBkZWYgZW1iZWRkaW5ncygKICAgIHJlcXVlc3Q6IFJlcXVlc3QsCiAgICBwYXlsb2FkOiBEaWN0W3N0ciwgQW55XSA9IEJvZHkoLi4uKSwKKToKICAgIGlmICJtb2RlbCIgbm90IGluIHBheWxvYWQgb3Igbm90IHBheWxvYWRbIm1vZGVsIl06CiAgICAgICAgcGF5bG9hZFsibW9kZWwiXSA9ICJ0ZXh0LWVtYmVkZGluZy0zLXNtYWxsIgogICAgaGVhZGVycyA9IGJ1aWxkX2hlYWRlcnMoZGljdChyZXF1ZXN0LmhlYWRlcnMpKQogICAgcmVzcCA9IGZvcndhcmRfanNvbigiL3YxL2VtYmVkZGluZ3MiLCBwYXlsb2FkLCBoZWFkZXJzLCBkaWN0KHJlcXVlc3QucXVlcnlfcGFyYW1zKSkKICAgIHJldHVybiBSZXNwb25zZSgKICAgICAgICBjb250ZW50PXJlc3AuY29udGVudCwKICAgICAgICBzdGF0dXNfY29kZT1yZXNwLnN0YXR1c19jb2RlLAogICAgICAgIG1lZGlhX3R5cGU9cmVzcC5oZWFkZXJzLmdldCgiQ29udGVudC1UeXBlIiwgImFwcGxpY2F0aW9uL2pzb24iKSwKICAgICkKCgpAYXBwLnBvc3QoIi92MS9yZXNwb25zZXMiKQphc3luYyBkZWYgcmVzcG9uc2VzX2FwaSgKICAgIHJlcXVlc3Q6IFJlcXVlc3QsCiAgICBwYXlsb2FkOiBEaWN0W3N0ciwgQW55XSA9IEJvZHkoLi4uKSwKKToKICAgIGlmICJtb2RlbCIgbm90IGluIHBheWxvYWQgb3IgcGF5bG9hZFsibW9kZWwiXSBpcyBOb25lOgogICAgICAgIHBheWxvYWRbIm1vZGVsIl0gPSBPUEVOQUlfREVGQVVMVF9NT0RFTAogICAgaGVhZGVycyA9IGJ1aWxkX2hlYWRlcnMoZGljdChyZXF1ZXN0LmhlYWRlcnMpKQogICAgcmVzcCA9IGZvcndhcmRfanNvbigiL3YxL3Jlc3BvbnNlcyIsIHBheWxvYWQsIGhlYWRlcnMsIGRpY3QocmVxdWVzdC5xdWVyeV9wYXJhbXMpKQogICAgcmV0dXJuIFJlc3BvbnNlKAogICAgICAgIGNvbnRlbnQ9cmVzcC5jb250ZW50LAogICAgICAgIHN0YXR1c19jb2RlPXJlc3Auc3RhdHVzX2NvZGUsCiAgICAgICAgbWVkaWFfdHlwZT1yZXNwLmhlYWRlcnMuZ2V0KCJDb250ZW50LVR5cGUiLCAiYXBwbGljYXRpb24vanNvbiIpLAogICAgKQoKCiMgLS0tLS0tLS0tLS0tLS0tLSBjbGllbnQgLS0tLS0tLS0tLS0tLS0tLQpjbGFzcyBPcGVuQUlQcm94eUNsaWVudDoKICAgICIiIgogICAgU2ltcGxlIGNsaWVudCBmb3IgdGhlIGxvY2FsIHByb3h5LgogICAgRGVmYXVsdCBiYXNlIHVybCBpcyBodHRwOi8vbG9jYWxob3N0OjgwMDAKICAgIElmIGFwaV9rZXkgaXMgbm90IHByb3ZpZGVkLCBpdCB1c2VzIE9QRU5BSV9BUElfS0VZIGZyb20gZW52aXJvbm1lbnQuCiAgICAiIiIKCiAgICBkZWYgX19pbml0X18oc2VsZiwgYmFzZV91cmw6IHN0ciA9ICJodHRwOi8vbG9jYWxob3N0OjgwMDAiLCBhcGlfa2V5OiBPcHRpb25hbFtzdHJdID0gTm9uZSk6CiAgICAgICAgc2VsZi5iYXNlX3VybCA9IGJhc2VfdXJsLnJzdHJpcCgiLyIpCiAgICAgICAgc2VsZi5hcGlfa2V5ID0gYXBpX2tleQoKICAgIGRlZiBfaGVhZGVycyhzZWxmKSAtPiBEaWN0W3N0ciwgc3RyXToKICAgICAgICBoZWFkZXJzID0geyJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiJ9CiAgICAgICAga2V5ID0gc2VsZi5hcGlfa2V5IG9yIG9zLmdldGVudigiT1BFTkFJX0FQSV9LRVkiLCAiIikKICAgICAgICBpZiBrZXk6CiAgICAgICAgICAgIGhlYWRlcnNbIkF1dGhvcml6YXRpb24iXSA9IGYiQmVhcmVyIHtrZXl9IgogICAgICAgIHJldHVybiBoZWFkZXJzCgogICAgZGVmIGNoYXQoc2VsZiwgbWVzc2FnZXM6IExpc3RbRGljdFtzdHIsIHN0cl1dLCBtb2RlbDogT3B0aW9uYWxbc3RyXSA9IE5vbmUpIC0+IERpY3Rbc3RyLCBBbnldOgogICAgICAgIGJvZHk6IERpY3Rbc3RyLCBBbnldID0geyJtZXNzYWdlcyI6IG1lc3NhZ2VzfQogICAgICAgIGlmIG1vZGVsOgogICAgICAgICAgICBib2R5WyJtb2RlbCJdID0gbW9kZWwKICAgICAgICByZXNwID0gcmVxdWVzdHMucG9zdCgKICAgICAgICAgICAgZiJ7c2VsZi5iYXNlX3VybH0vdjEvY2hhdC9jb21wbGV0aW9ucyIsCiAgICAgICAgICAgIGhlYWRlcnM9c2VsZi5faGVhZGVycygpLAogICAgICAgICAgICBqc29uPWJvZHksCiAgICAgICAgICAgIHRpbWVvdXQ9NjAsCiAgICAgICAgKQogICAgICAgIHJlc3AucmFpc2VfZm9yX3N0YXR1cygpCiAgICAgICAgcmV0dXJuIHJlc3AuanNvbigpCgogICAgZGVmIGVtYmVkZGluZ3Moc2VsZiwgdGV4dDogQW55LCBtb2RlbDogT3B0aW9uYWxbc3RyXSA9IE5vbmUpIC0+IERpY3Rbc3RyLCBBbnldOgogICAgICAgIGJvZHk6IERpY3Rbc3RyLCBBbnldID0geyJpbnB1dCI6IHRleHR9CiAgICAgICAgaWYgbW9kZWw6CiAgICAgICAgICAgIGJvZHlbIm1vZGVsIl0gPSBtb2RlbAogICAgICAgIHJlc3AgPSByZXF1ZXN0cy5wb3N0KAogICAgICAgICAgICBmIntzZWxmLmJhc2VfdXJsfS92MS9lbWJlZGRpbmdzIiwKICAgICAgICAgICAgaGVhZGVycz1zZWxmLl9oZWFkZXJzKCksCiAgICAgICAgICAgIGpzb249Ym9keSwKICAgICAgICAgICAgdGltZW91dD02MCwKICAgICAgICApCiAgICAgICAgcmVzcC5yYWlzZV9mb3Jfc3RhdHVzKCkKICAgICAgICByZXR1cm4gcmVzcC5qc29uKCkKCiAgICBkZWYgcmVzcG9uc2VzKHNlbGYsIGlucHV0X3RleHQ6IEFueSwgbW9kZWw6IE9wdGlvbmFsW3N0cl0gPSBOb25lKSAtPiBEaWN0W3N0ciwgQW55XToKICAgICAgICBib2R5OiBEaWN0W3N0ciwgQW55XSA9IHsiaW5wdXQiOiBpbnB1dF90ZXh0fQogICAgICAgIGlmIG1vZGVsOgogICAgICAgICAgICBib2R5WyJtb2RlbCJdID0gbW9kZWwKICAgICAgICByZXNwID0gcmVxdWVzdHMucG9zdCgKICAgICAgICAgICAgZiJ7c2VsZi5iYXNlX3VybH0vdjEvcmVzcG9uc2VzIiwKICAgICAgICAgICAgaGVhZGVycz1zZWxmLl9oZWFkZXJzKCksCiAgICAgICAgICAgIGpzb249Ym9keSwKICAgICAgICAgICAgdGltZW91dD02MCwKICAgICAgICApCiAgICAgICAgcmVzcC5yYWlzZV9mb3Jfc3RhdHVzKCkKICAgICAgICByZXR1cm4gcmVzcC5qc29uKCkKCgojIG9wdGlvbmFsIHF1aWNrIHNlbGYgdGVzdCB3aGVuIHJ1bm5pbmcgdGhpcyBmaWxlIGRpcmVjdGx5CmlmIF9fbmFtZV9fID09ICJfX21haW5fXyI6CiAgICAjIHN0YXJ0IHRoZSBzZXJ2ZXIgaW4gYW5vdGhlciB0ZXJtaW5hbCBmaXJzdDoKICAgICMgdXZpY29ybiBvcGVuYWlfcHJveHkub3BlbmFpOmFwcCAtLWhvc3QgMC4wLjAuMCAtLXBvcnQgODAwMCAtLXJlbG9hZAogICAgYyA9IE9wZW5BSVByb3h5Q2xpZW50KCkKICAgIHRyeToKICAgICAgICBwcmludCgiSGVhbHRoOiIsIHJlcXVlc3RzLmdldChmIntjLmJhc2VfdXJsfS8iKS5qc29uKCkpCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgcHJpbnQoIlNlcnZlciBub3QgcnVubmluZzoiLCBlKQo="</span>
+<span class="n">CMD</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">'''</span>
+<span class="s1">set -e</span>
+<span class="s1">python - &lt;&lt;'PY'</span>
+<span class="s1">import os, base64, pathlib</span>
+<span class="s1">code = os.environ["BASE64"]</span>
+<span class="s1">pathlib.Path("/opt/app").mkdir(parents=True, exist_ok=True)</span>
+<span class="s1">with open("/opt/app/openai_proxy_app.py","wb") as f:</span>
+<span class="s1">    f.write(base64.b64decode(code))</span>
+<span class="s1">print("Wrote /opt/app/openai_proxy_app.py")</span>
+<span class="s1">PY</span>
+
+<span class="s1">exec gunicorn openai_proxy_app:app \</span>
+<span class="s1">  --chdir /opt/app \</span>
+<span class="s1">  --bind 0.0.0.0:8000 \</span>
+<span class="s1">  --worker-class uvicorn.workers.UvicornWorker \</span>
+<span class="s1">  --log-level info</span>
+<span class="s1">'''</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<div class="viewcode-block" id="OpenAIModule">
+<a class="viewcode-back" href="documentation.html#openai_proxy_app.openai_proxy_app.OpenAIModule">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OpenAIModule</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">project</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">project</span> <span class="o">=</span> <span class="n">project</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">openai_proxy_app</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">set_function</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"openai"</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s2">"application"</span><span class="p">,</span><span class="n">image</span><span class="o">=</span><span class="s2">"python:3.11"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">openai_proxy_app</span><span class="o">.</span><span class="n">with_requirements</span><span class="p">([</span>
+                <span class="s2">"fastapi==0.124.0"</span><span class="p">,</span>
+                <span class="s2">"uvicorn[standard]==0.38.0"</span><span class="p">,</span>
+                <span class="s2">"gunicorn==23.0.0"</span><span class="p">,</span>
+                <span class="s2">"requests=2.32.5"</span><span class="p">,</span>
+            <span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">openai_proxy_app</span><span class="o">.</span><span class="n">set_env</span><span class="p">(</span><span class="s2">"BASE64"</span><span class="p">,</span><span class="n">BASE64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">openai_proxy_app</span><span class="o">.</span><span class="n">set_internal_application_port</span><span class="p">(</span><span class="mi">8000</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">openai_proxy_app</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="s2">"/bin/sh"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">openai_proxy_app</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"-c"</span><span class="p">,</span> <span class="n">CMD</span><span class="p">]</span></div>
+
+        
+
+        
+    
+    
+</pre></div>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="bd-footer">
+</footer>
+</body>
+</html>

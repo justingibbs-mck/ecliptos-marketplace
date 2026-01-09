@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="./" data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Feature Selection</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css?v=8f2a1f02" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/css/custom.css?v=a569c0df" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="../../../_static/doctools.js?v=9bcbadda"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'feature_selection_example';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="light" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="" spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="index.html">
+<p class="title logo__title"></p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</button></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="../src/feature_selection.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Feature Selection</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-test">Local Test</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section id="feature-selection">
+<h1>Feature Selection<a class="headerlink" href="#feature-selection" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mlrun</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-03-06 10:55:11,680 [warning] Failed resolving version info. Ignoring and using defaults
+&gt; 2025-03-06 10:55:13,566 [warning] Server or client version is unstable. Assuming compatible: {"client_version":"0.0.0+unstable","server_version":"1.8.0"}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">project</span> <span class="o">=</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">get_or_create_project</span><span class="p">(</span><span class="s2">"feature-selection"</span><span class="p">,</span><span class="s1">'./'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-03-06 10:55:14,686 [info] Loading project from path: {"path":"./","project_name":"feature-selection","user_project":false}
+&gt; 2025-03-06 10:55:14,726 [warning] Project name mismatch, fhub-v2 != feature-selection, project is loaded from fhub-v2 project yaml. To prevent/allow this, you can take one of the following actions:
+1. Set the `allow_cross_project=True` when loading the project.
+2. Delete the existing project yaml, or ensure its name is equal to feature-selection.
+3. Use different project context dir.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Project name='feature-selection' is different than specified on the context's project yaml. This behavior is deprecated and will not be supported from version 1.9.0.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-03-06 10:55:29,474 [info] Project loaded successfully: {"path":"./","project_name":"feature-selection","stored_in_db":true}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="local-test">
+<h2>Local Test<a class="headerlink" href="#local-test" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_selection</span> <span class="o">=</span> <span class="n">mlrun</span><span class="o">.</span><span class="n">import_function</span><span class="p">(</span><span class="s2">"function.yaml"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="n">feature_selection</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">handler</span><span class="o">=</span><span class="s2">"feature_selection"</span><span class="p">,</span> 
+                      <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">'k'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                       <span class="s1">'min_votes'</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+                       <span class="s1">'label_column'</span><span class="p">:</span> <span class="s1">'is_error'</span><span class="p">},</span>
+                      <span class="n">inputs</span><span class="o">=</span><span class="p">{</span><span class="s1">'df_artifact'</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">'data/metrics.pq'</span><span class="p">)},</span>
+                      <span class="n">artifact_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">'./'</span><span class="p">),</span> <span class="s1">'artifacts'</span><span class="p">),</span> <span class="n">local</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-03-06 10:59:27,279 [info] Storing function: {"db":null,"name":"feature-selection-feature-selection","uid":"fdcbc4e3f5c44769be5e64425f10aed8"}
+&gt; 2025-03-06 10:59:30,808 [info] votes needed to be selected: 2
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/User/.pythonlibs/mlrun-extended/lib/python3.9/site-packages/mlrun/artifacts/dataset.py:387: RuntimeWarning:
+
+Converting input from bool to &lt;class 'numpy.uint8'&gt; for compatibility.
+</pre></div>
+</div>
+<div class="output text_html"><style>
+.dictlist {
+  background-color: #4EC64B;
+  text-align: center;
+  margin: 4px;
+  border-radius: 3px; padding: 0px 3px 1px 3px; display: inline-block;}
+.artifact {
+  cursor: pointer;
+  background-color: #4EC64B;
+  text-align: left;
+  margin: 4px; border-radius: 3px; padding: 0px 3px 1px 3px; display: inline-block;
+}
+div.block.hidden {
+  display: none;
+}
+.clickable {
+  cursor: pointer;
+}
+.ellipsis {
+  display: inline-block;
+  max-width: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.master-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.master-tbl {
+  flex: 3
+}
+.master-wrapper > div {
+  margin: 4px;
+  padding: 10px;
+}
+iframe.fileview {
+  border: 0 none;
+  height: 100%;
+  width: 100%;
+  white-space: pre-wrap;
+}
+.pane-header-title {
+  width: 80%;
+  font-weight: 500;
+}
+.pane-header {
+  line-height: 1;
+  background-color: #4EC64B;
+  padding: 3px;
+}
+.pane-header .close {
+  font-size: 20px;
+  font-weight: 700;
+  float: right;
+  margin-top: -5px;
+}
+.master-wrapper .right-pane {
+  border: 1px inset silver;
+  width: 40%;
+  min-height: 300px;
+  flex: 3
+  min-width: 500px;
+}
+.master-wrapper * {
+  box-sizing: border-box;
+}
+</style><script>
+function copyToClipboard(fld) {
+    if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
+        var textarea = document.createElement('textarea');
+        textarea.textContent = fld.innerHTML;
+        textarea.style.position = 'fixed';
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try {
+            return document.execCommand('copy'); // Security exception may be thrown by some browsers.
+        } catch (ex) {
+
+        } finally {
+            document.body.removeChild(textarea);
+        }
+    }
+}
+function expandPanel(el) {
+  const panelName = "#" + el.getAttribute('paneName');
+
+  // Get the base URL of the current notebook
+  var baseUrl = window.location.origin;
+
+  // Construct the full URL
+  var fullUrl = new URL(el.title, baseUrl).href;
+
+  document.querySelector(panelName + "-title").innerHTML = fullUrl
+  iframe = document.querySelector(panelName + "-body");
+
+  const tblcss = `<style> body { font-family: Arial, Helvetica, sans-serif;}
+    #csv { margin-bottom: 15px; }
+    #csv table { border-collapse: collapse;}
+    #csv table td { padding: 4px 8px; border: 1px solid silver;} </style>`;
+
+  function csvToHtmlTable(str) {
+    return '<div id="csv"><table><tr><td>' +  str.replace(/[\n\r]+$/g, '').replace(/[\n\r]+/g, '</td></tr><tr><td>')
+      .replace(/,/g, '</td><td>') + '</td></tr></table></div>';
+  }
+
+  function reqListener () {
+    if (fullUrl.endsWith(".csv")) {
+      iframe.setAttribute("srcdoc", tblcss + csvToHtmlTable(this.responseText));
+    } else {
+      iframe.setAttribute("srcdoc", this.responseText);
+    }
+    console.log(this.responseText);
+  }
+
+  const oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", reqListener);
+  oReq.open("GET", fullUrl);
+  oReq.send();
+
+
+  //iframe.src = fullUrl;
+  const resultPane = document.querySelector(panelName + "-pane");
+  if (resultPane.classList.contains("hidden")) {
+    resultPane.classList.remove("hidden");
+  }
+}
+function closePanel(el) {
+  const panelName = "#" + el.getAttribute('paneName')
+  const resultPane = document.querySelector(panelName + "-pane");
+  if (!resultPane.classList.contains("hidden")) {
+    resultPane.classList.add("hidden");
+  }
+}
+
+</script>
+<div class="master-wrapper">
+<div class="block master-tbl"><div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>project</th>
+<th>uid</th>
+<th>iter</th>
+<th>start</th>
+<th>end</th>
+<th>state</th>
+<th>kind</th>
+<th>name</th>
+<th>labels</th>
+<th>inputs</th>
+<th>parameters</th>
+<th>results</th>
+<th>artifact_uris</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feature-selection</td>
+<td><div title="fdcbc4e3f5c44769be5e64425f10aed8"><a href="https://dashboard.default-tenant.app.vmdev67.lab.iguazeng.com/mlprojects/feature-selection/jobs/monitor/fdcbc4e3f5c44769be5e64425f10aed8/overview" target="_blank">...5f10aed8</a></div></td>
+<td>0</td>
+<td>Mar 06 10:59:27</td>
+<td>NaT</td>
+<td>completed</td>
+<td>run</td>
+<td>feature-selection-feature-selection</td>
+<td><div class="dictlist">v3io_user=iguazio</div><div class="dictlist">kind=local</div><div class="dictlist">owner=iguazio</div><div class="dictlist">host=jupyter-75c4d4bf58-gkz6c</div></td>
+<td><div title="/User/data/metrics.pq">df_artifact</div></td>
+<td><div class="dictlist">k=2</div><div class="dictlist">min_votes=0.3</div><div class="dictlist">label_column=is_error</div></td>
+<td></td>
+<td><div class="dictlist">f_classif=store://artifacts/feature-selection/feature-selection-feature-selection_f_classif#0@fdcbc4e3f5c44769be5e64425f10aed8^eaf3bb0877b7a8502365fc3a919a6ba295febdd9</div><div class="dictlist">mutual_info_classif=store://artifacts/feature-selection/feature-selection-feature-selection_mutual_info_classif#0@fdcbc4e3f5c44769be5e64425f10aed8^8d572b32e4d65007b048aa0b51899c0ebcb45219</div><div class="dictlist">chi2=store://artifacts/feature-selection/feature-selection-feature-selection_chi2#0@fdcbc4e3f5c44769be5e64425f10aed8^5775ae9bbecb726fbe4d229548b82d920a43526e</div><div class="dictlist">f_regression=store://artifacts/feature-selection/feature-selection-feature-selection_f_regression#0@fdcbc4e3f5c44769be5e64425f10aed8^90cd856fcf72b5daac1822b537dbef1ea504f6ef</div><div class="dictlist">LinearSVC=store://artifacts/feature-selection/feature-selection-feature-selection_LinearSVC#0@fdcbc4e3f5c44769be5e64425f10aed8^9723935a28b9ea141e7aaf6f242109ce9383eae0</div><div class="dictlist">LogisticRegression=store://artifacts/feature-selection/feature-selection-feature-selection_LogisticRegression#0@fdcbc4e3f5c44769be5e64425f10aed8^852483e49d4372edd493a130f7fd4aa85666af36</div><div class="dictlist">ExtraTreesClassifier=store://artifacts/feature-selection/feature-selection-feature-selection_ExtraTreesClassifier#0@fdcbc4e3f5c44769be5e64425f10aed8^0f32d3f338d4a7692859d06443c5e8499773a651</div><div class="dictlist">feature_scores=store://datasets/feature-selection/feature-selection-feature-selection_feature_scores#0@fdcbc4e3f5c44769be5e64425f10aed8^9abe27f14a189c6ff34456a29403fabdb54113f2</div><div class="dictlist">max_scaled_scores_feature_scores=store://datasets/feature-selection/feature-selection-feature-selection_max_scaled_scores_feature_scores#0@fdcbc4e3f5c44769be5e64425f10aed8^1910b21802b1d6a0aa412fca4f93cecbc8c755b4</div><div class="dictlist">selected_features_count=store://datasets/feature-selection/feature-selection-feature-selection_selected_features_count#0@fdcbc4e3f5c44769be5e64425f10aed8^e06baafaa333c72865103b3f3645da60367f9b85</div><div class="dictlist">selected_features=store://datasets/feature-selection/feature-selection-feature-selection_selected_features#0@fdcbc4e3f5c44769be5e64425f10aed8^7af89e5113ae0dce4c8b90f4a52cf57500d795b5</div></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<div class="right-pane block hidden" id="result974bca03-pane">
+<div class="pane-header">
+<span class="pane-header-title" id="result974bca03-title">Title</span>
+<span class="close clickable" onclick="closePanel(this)" panename="result974bca03">×</span>
+</div>
+<iframe class="fileview" id="result974bca03-body"></iframe>
+</div>
+</div>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output text_html"><b> &gt; to track results use the .show() or .logs() methods  or <a href="https://dashboard.default-tenant.app.vmdev67.lab.iguazeng.com/mlprojects/feature-selection/jobs/monitor-jobs/feature-selection-feature-selection/fdcbc4e3f5c44769be5e64425f10aed8/overview" target="_blank">click here</a> to open in UI</b></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; 2025-03-06 10:59:31,131 [info] Run execution finished: {"name":"feature-selection-feature-selection","status":"completed"}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlrun</span><span class="o">.</span><span class="n">get_dataitem</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="s1">'df_artifact'</span><span class="p">])</span><span class="o">.</span><span class="n">as_df</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th>cpu_utilization</th>
+<th>latency</th>
+<th>packet_loss</th>
+<th>throughput</th>
+<th>is_error</th>
+</tr>
+<tr>
+<th>timestamp</th>
+<th>company</th>
+<th>data_center</th>
+<th>device</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th rowspan="5" valign="top">2021-04-27 14:46:46.780</th>
+<th rowspan="4" valign="top">Smith_Group</th>
+<th rowspan="2" valign="top">Denise_Crest</th>
+<th>5124209057231</th>
+<td>75.598891</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>252.445971</td>
+<td>False</td>
+</tr>
+<tr>
+<th>2891755865712</th>
+<td>50.090373</td>
+<td>3.280849</td>
+<td>0.000000</td>
+<td>229.889187</td>
+<td>False</td>
+</tr>
+<tr>
+<th rowspan="2" valign="top">Debra_Gateway</th>
+<th>0388020295311</th>
+<td>73.243063</td>
+<td>9.372341</td>
+<td>2.170138</td>
+<td>260.883807</td>
+<td>False</td>
+</tr>
+<tr>
+<th>9633813691441</th>
+<td>60.830420</td>
+<td>12.241878</td>
+<td>2.295717</td>
+<td>244.238613</td>
+<td>False</td>
+</tr>
+<tr>
+<th>Ferrell_Ltd</th>
+<th>Murphy_Meadow</th>
+<th>1517129765931</th>
+<td>72.647964</td>
+<td>0.535463</td>
+<td>0.000000</td>
+<td>212.944943</td>
+<td>False</td>
+</tr>
+<tr>
+<th>...</th>
+<th>...</th>
+<th>...</th>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th rowspan="5" valign="top">2021-04-27 15:46:46.780</th>
+<th>Smith_Group</th>
+<th>Debra_Gateway</th>
+<th>9633813691441</th>
+<td>77.875954</td>
+<td>3.250584</td>
+<td>0.000000</td>
+<td>245.150281</td>
+<td>False</td>
+</tr>
+<tr>
+<th rowspan="4" valign="top">Ferrell_Ltd</th>
+<th rowspan="2" valign="top">Murphy_Meadow</th>
+<th>1517129765931</th>
+<td>77.831459</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>235.109321</td>
+<td>False</td>
+</tr>
+<tr>
+<th>6964486699383</th>
+<td>55.978514</td>
+<td>2.977447</td>
+<td>0.533963</td>
+<td>277.622402</td>
+<td>False</td>
+</tr>
+<tr>
+<th rowspan="2" valign="top">Nicholas_Estate</th>
+<th>8002897098167</th>
+<td>58.265446</td>
+<td>4.090207</td>
+<td>2.048268</td>
+<td>272.717982</td>
+<td>False</td>
+</tr>
+<tr>
+<th>8499880735104</th>
+<td>71.245041</td>
+<td>0.000000</td>
+<td>2.929407</td>
+<td>235.659211</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>5768 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlrun</span><span class="o">.</span><span class="n">get_dataitem</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">'feature_scores'</span><span class="p">])</span><span class="o">.</span><span class="n">as_df</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>f_classif</th>
+<th>mutual_info_classif</th>
+<th>chi2</th>
+<th>f_regression</th>
+<th>LinearSVC</th>
+<th>LogisticRegression</th>
+<th>ExtraTreesClassifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>cpu_utilization</th>
+<td>2520.015809</td>
+<td>0.180451</td>
+<td>4457.429360</td>
+<td>2520.015809</td>
+<td>-0.037533</td>
+<td>-0.178632</td>
+<td>0.023102</td>
+</tr>
+<tr>
+<th>latency</th>
+<td>10152.151995</td>
+<td>0.199853</td>
+<td>272872.890194</td>
+<td>10152.151995</td>
+<td>0.023732</td>
+<td>0.104103</td>
+<td>0.023102</td>
+</tr>
+<tr>
+<th>packet_loss</th>
+<td>14120.490547</td>
+<td>0.210081</td>
+<td>157191.427524</td>
+<td>14120.490547</td>
+<td>0.047873</td>
+<td>0.214212</td>
+<td>0.023102</td>
+</tr>
+<tr>
+<th>throughput</th>
+<td>20421.721030</td>
+<td>0.231438</td>
+<td>109129.511665</td>
+<td>20421.721030</td>
+<td>-0.014421</td>
+<td>-0.084308</td>
+<td>0.023102</td>
+</tr>
+</tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-test">Local Test</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="bd-footer">
+</footer>
+</body>
+</html>
