@@ -423,18 +423,23 @@ A full-stack application with a backend API and database, enabling advanced feat
 ## Quick Start Commands
 
 ```bash
-# Initialize Next.js project
+# Initialize Next.js project (using npx for one-off command)
 npx create-next-app@latest ecliptos-marketplace --typescript --tailwind --app
 
-# Install dependencies (if needed)
+# Install dependencies (npm install is correct for installing from package.json)
 npm install
 
-# Run development server
+# Run development server (npm run is correct for executing package.json scripts)
 npm run dev
 
 # Build for production (static export)
 npm run build
 ```
+
+**Note on npm vs npx:**
+- Use `npx` for one-off package executions (e.g., `npx create-next-app@latest`)
+- Use `npm run` for executing scripts defined in `package.json` (e.g., `npm run dev`)
+- Use `npm install` for installing dependencies from `package.json`
 
 ## Next Steps
 

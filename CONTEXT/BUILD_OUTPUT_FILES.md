@@ -14,6 +14,11 @@ For example:
 uv run python -m cli.cli build-marketplace -s functions/src -sn functions -m marketplace -c master
 ```
 
+**Note:** This project uses `uv` instead of `pip` for all Python package management. The `uv run` command ensures:
+- Dependencies are resolved from the project's lockfile
+- Consistent Python version across environments
+- Faster execution compared to traditional pip-based workflows
+
 ## Directory Structure Created
 
 The build process creates the following structure in the `marketplace_dir`:

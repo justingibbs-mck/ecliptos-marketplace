@@ -191,6 +191,9 @@ dev-ui:
 build-ui:
 	cd ui && npm run build
 
+# Note: npm run is correct for executing scripts defined in package.json
+# For one-off package executions, use npx instead (e.g., npx create-next-app@latest)
+
 # Full workflow: build marketplace + link + dev
 dev: build-marketplace link-ui dev-ui
 ```

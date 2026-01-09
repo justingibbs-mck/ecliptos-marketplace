@@ -110,6 +110,11 @@ uv run python -m cli.cli build-marketplace -s functions/src -sn functions -m mar
 uv run python -m cli.cli build-marketplace -s modules/src -sn modules -m marketplace -c master
 ```
 
+**Note:** All Python commands use `uv run` instead of `pip` or `python` directly. This ensures:
+- Consistent Python environment management
+- Faster dependency resolution
+- Better reproducibility across different systems
+
 ### Watch Mode (Future Enhancement)
 
 Once the frontend is set up, Next.js will hot-reload when you change frontend code. However, if you change marketplace source files, you'll need to:

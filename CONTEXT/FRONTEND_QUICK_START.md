@@ -32,6 +32,7 @@ cd ui
 npx create-next-app@latest . --typescript --tailwind --app --yes
 
 # 2. Install dependencies
+# Note: npm install is correct here - it installs from package.json
 npm install
 
 # 3. Create symlink script (see below)
@@ -55,6 +56,11 @@ cd ui && npm run link-marketplace
 
 # Start dev server
 cd ui && npm run dev
+
+# Note: For one-off npm package installations, use npx:
+# npx <package-name> [args]
+# For running scripts defined in package.json, use npm run:
+# npm run <script-name>
 ```
 
 ## Symlink Script
