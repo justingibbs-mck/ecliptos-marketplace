@@ -14,6 +14,12 @@ For example:
 uv run python -m cli.cli build-marketplace -s functions/src -sn functions -m marketplace -c master
 ```
 
+**Note:** The command above builds a single source (functions in this example). To build all sources (functions, modules, and steps) at once, use the Makefile target:
+```bash
+make build-marketplace
+```
+This runs the CLI command three times (once for each source) and is the recommended approach for full marketplace builds.
+
 **Note:** This project uses `uv` instead of `pip` for all Python package management. The `uv run` command ensures:
 - Dependencies are resolved from the project's lockfile
 - Consistent Python version across environments
