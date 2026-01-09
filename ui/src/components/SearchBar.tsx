@@ -34,7 +34,7 @@ export default function SearchBar({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="block w-full pl-10 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+        className="block w-full pl-12 pr-12 py-3.5 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-mckinsey-blue-500 focus:border-mckinsey-blue-500 outline-none text-base shadow-sm transition-all bg-white"
         aria-label="Search marketplace items"
       />
       {value && (

@@ -26,11 +26,11 @@ export default function FunctionCard({ item }: FunctionCardProps) {
   const displayedCategories = categories.slice(0, maxCategories);
   const remainingCount = categories.length - maxCategories;
 
-  // Type badge colors
+  // Type badge colors - McKinsey-inspired blue theme
   const typeBadgeColors = {
-    functions: 'bg-blue-100 text-blue-800',
-    modules: 'bg-green-100 text-green-800',
-    steps: 'bg-purple-100 text-purple-800',
+    functions: 'bg-mckinsey-blue-500 text-white',
+    modules: 'bg-mckinsey-blue-600 text-white',
+    steps: 'bg-mckinsey-blue-700 text-white',
   };
 
   const detailUrl = `/item/${type}/${name}`;
@@ -38,19 +38,19 @@ export default function FunctionCard({ item }: FunctionCardProps) {
   return (
     <Link
       href={detailUrl}
-      className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow flex flex-col h-full cursor-pointer block"
+      className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-card-hover hover:border-mckinsey-blue-200 transition-all duration-200 flex flex-col h-full cursor-pointer block group shadow-card"
     >
       {/* Header with name and badges */}
       <div className="mb-3">
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">{name}</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-mckinsey-blue-600 transition-colors">{name}</h3>
         <div className="flex flex-wrap gap-2">
-          {/* Type badge */}
-          <span className={`px-2 py-1 text-xs font-medium rounded ${typeBadgeColors[type]}`}>
+          {/* Type badge - McKinsey blue */}
+          <span className={`px-3 py-1 text-xs font-semibold rounded ${typeBadgeColors[type]}`}>
             {typeLabel}
           </span>
-          {/* Kind badge */}
+          {/* Kind badge - subtle with blue text */}
           {kind && (
-            <span className="px-2 py-1 text-xs font-medium rounded bg-gray-100 text-gray-800">
+            <span className="px-3 py-1 text-xs font-medium rounded bg-gray-100 text-mckinsey-blue-700">
               {formatKindLabel(kind)}
             </span>
           )}
@@ -59,7 +59,7 @@ export default function FunctionCard({ item }: FunctionCardProps) {
 
       {/* Description */}
       {description && (
-        <p className="text-sm text-gray-600 mb-3 line-clamp-2 flex-grow">{description}</p>
+        <p className="text-sm text-gray-700 mb-3 line-clamp-2 flex-grow leading-relaxed">{description}</p>
       )}
 
       {/* Categories */}
@@ -69,13 +69,13 @@ export default function FunctionCard({ item }: FunctionCardProps) {
             {displayedCategories.map((category, index) => (
               <span
                 key={index}
-                className="px-2 py-0.5 text-xs rounded bg-gray-50 text-gray-700 border border-gray-200"
+                className="px-2.5 py-1 text-xs rounded bg-mckinsey-light-100 text-mckinsey-blue-700 border border-mckinsey-light-200"
               >
                 {formatCategoryName(category)}
               </span>
             ))}
             {remainingCount > 0 && (
-              <span className="px-2 py-0.5 text-xs text-gray-500">
+              <span className="px-2.5 py-1 text-xs text-gray-500">
                 +{remainingCount} more
               </span>
             )}
