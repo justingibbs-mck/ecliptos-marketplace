@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { CatalogItem, getItemKind, getItemGenerationDate, getItemTypeLabel } from '@/lib/catalog';
 import { formatRelativeDate, formatCategoryName, formatKindLabel } from '@/lib/utils';
 
@@ -32,8 +33,13 @@ export default function FunctionCard({ item }: FunctionCardProps) {
     steps: 'bg-purple-100 text-purple-800',
   };
 
+  const detailUrl = `/item/${type}/${name}`;
+
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow flex flex-col h-full">
+    <Link
+      href={detailUrl}
+      className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow flex flex-col h-full cursor-pointer block"
+    >
       {/* Header with name and badges */}
       <div className="mb-3">
         <h3 className="text-lg font-semibold text-gray-900 mb-2">{name}</h3>
@@ -83,7 +89,7 @@ export default function FunctionCard({ item }: FunctionCardProps) {
           {relativeDate}
         </div>
       )}
-    </div>
+    </Link>
   );
 }
 
