@@ -145,3 +145,14 @@ conda-setup-gpu
 # UV
 .uv/
 uv.lock
+
+# Marketplace build output
+marketplace/
+
+# Frontend (Next.js)
+ui/.next/
+ui/.vercel/
+ui/node_modules/
+ui/.env*.local
+ui/out/
+ui/.swc/

@@ -32,5 +32,14 @@ test: ## Run tests for a specific asset (usage: make test NAME=aggregate [TYPE=f
 cli: ## Run the CLI tool (usage: make cli ARGS="command args")
 	uv run python -m cli.cli $(ARGS)
 
+build-marketplace: ## Build marketplace for all sources (functions, modules, steps)
+	@echo "Building marketplace for functions..."
+	uv run python -m cli.cli build-marketplace -s functions/src -sn functions -m marketplace -c master
+	@echo "Building marketplace for modules..."
+	uv run python -m cli.cli build-marketplace -s modules/src -sn modules -m marketplace -c master
+	@echo "Building marketplace for steps..."
+	uv run python -m cli.cli build-marketplace -s steps/src -sn steps -m marketplace -c master
+	@echo "✅ Marketplace build complete!"
+
 .DEFAULT_GOAL := help
 
