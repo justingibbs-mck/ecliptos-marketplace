@@ -15,13 +15,13 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <a 
               href="#" 
-              className="text-gray-700 hover:text-mckinsey-blue-500 transition-colors font-medium text-sm"
+              className="text-gray-700 hover:text-mckinsey-blue-500 transition-colors duration-200 font-medium text-sm relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-mckinsey-blue-500 after:transition-all after:duration-200 hover:after:w-full"
             >
               Browse
             </a>
             <a 
               href="#" 
-              className="text-gray-700 hover:text-mckinsey-blue-500 transition-colors font-medium text-sm"
+              className="text-gray-700 hover:text-mckinsey-blue-500 transition-colors duration-200 font-medium text-sm relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-mckinsey-blue-500 after:transition-all after:duration-200 hover:after:w-full"
             >
               Documentation
             </a>

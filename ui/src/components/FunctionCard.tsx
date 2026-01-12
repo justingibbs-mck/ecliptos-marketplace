@@ -38,7 +38,7 @@ export default function FunctionCard({ item }: FunctionCardProps) {
   return (
     <Link
       href={detailUrl}
-      className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-card-hover hover:border-mckinsey-blue-200 transition-all duration-200 flex flex-col h-full cursor-pointer block group shadow-card"
+      className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-card-hover hover:border-mckinsey-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer block group shadow-card"
     >
       {/* Header with name and badges */}
       <div className="mb-3">

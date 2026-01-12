@@ -14,6 +14,7 @@ import SearchBar from '@/components/SearchBar';
 import FilterPanel from '@/components/FilterPanel';
 import SortDropdown from '@/components/SortDropdown';
 import ResultCount from '@/components/ResultCount';
+import LoadingState from '@/components/LoadingState';
 
 export default function Home() {
   const [catalog, setCatalog] = useState<Catalog | null>(null);
@@ -90,17 +91,13 @@ export default function Home() {
   }, [allItems, searchQuery, selectedCategories, selectedKinds, sortBy]);
 
   if (loading) {
-    return (
-      <div className="container mx-auto px-4 py-8">
-        <p className="text-gray-600">Loading catalog...</p>
-      </div>
-    );
+    return <LoadingState />;
   }
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-8">
-        <p className="text-red-600">Error loading catalog: {error}</p>
+      <div className="container mx-auto px-6 py-16 max-w-7xl">
+        <p className="text-red-600 font-medium">Error loading catalog: {error}</p>
         <p className="text-sm text-gray-600 mt-2">
           Make sure the marketplace has been built and catalog.json exists in the public directory.
         </p>
@@ -110,15 +107,15 @@ export default function Home() {
 
   if (!catalog) {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-6 py-16 max-w-7xl">
         <p className="text-gray-600">No catalog data available.</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-6 py-8 max-w-7xl">
-      <div className="flex flex-col lg:flex-row gap-6">
+    <div className="container mx-auto px-6 py-12 max-w-7xl">
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Filter Sidebar */}
         <aside className="w-full lg:w-64 flex-shrink-0">
           <FilterPanel
@@ -134,18 +131,26 @@ export default function Home() {
         {/* Main Content */}
         <main className="flex-1 min-w-0">
           {/* Search Bar */}
-          <div className="mb-6">
+          <div className="mb-8">
             <SearchBar value={searchQuery} onChange={setSearchQuery} />
           </div>
 
           {/* Sort and Result Count */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
             <ResultCount count={filteredItems.length} />
             <SortDropdown value={sortBy} onChange={setSortBy} />
           </div>
 
           {/* Item Grid */}
-          <ItemGrid items={filteredItems} />
+          <ItemGrid 
+            items={filteredItems}
+            hasActiveFilters={searchQuery !== '' || selectedCategories.length > 0 || selectedKinds.length > 0}
+            onClearFilters={() => {
+              setSearchQuery('');
+              setSelectedCategories([]);
+              setSelectedKinds([]);
+            }}
+          />
         </main>
       </div>
     </div>
